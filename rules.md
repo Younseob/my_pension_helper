@@ -23,23 +23,33 @@
 
 ---
 
-## 🔄 제3조 (4단계 자율 개발 & 검증 파이프라인)
+## 🔄 제3조 (그래프 엔지니어링 6단계 멀티 에이전트 파이프라인)
 
 ```mermaid
 graph TD
-    A["1. 기획 및 프롬프트 명세화 (Antigravity Planner)"] --> B["2. 로컬 CLI 코딩 실행 (Cline CLI + qwen2.5-coder:14b)"]
-    B --> C["3. 금융 수식 Audit & TypeScript 빌드 검증 (Antigravity Verifier)"]
-    C --> D["4. Git Commit / Push & Render 라이브 자동 배포"]
+    User([👤 사용자 요청]) --> Node1["1. 요구사항 정밀 분석 노드<br/>(Antigravity Planner)"]
+    Node1 --> Node2["2. 고정밀 업무 분장 & 256K 상세 플랜 명세 노드<br/>(Antigravity Planner)"]
+    Node2 --> Node3["3. 로컬 소스코드 구현 노드<br/>(Cline Coder: qwen2.5-coder:14b)"]
+    Node3 <-->|코드 수정 & 상호 피드백 검증| Node4["4. 로컬 코드 1차 검증 노드<br/>(Cline Reviewer: qwen2.5-coder:14b)"]
+    Node4 -->|1차 검증 완료| Node5["5. 최종 통합 리뷰 & TypeScript Build 검증 노드<br/>(Antigravity Reviewer)"]
+    
+    Node5 -- "요구사항 불일치 / 타입 에러 (Feedback)" --> Node2
+    Node5 -- "최종 승인 (Passed ✅)" --> Node6["6. Git Commit / Push & Render 배포 노드"]
 ```
 
-1. **[Step 1] 기획 & 명세화 (Antigravity Planner)**:
-   - 개발할 기능의 금융 수학적 산식, UI/UX 사양 및 로컬 CLI에 전달할 명확한 프롬프트를 설계한다.
-2. **[Step 2] 로컬 코딩 수행 (Cline CLI + qwen2.5-coder:14b)**:
-   - 로컬 `cline` CLI 명령어로 사용자 PC의 `qwen2.5-coder:14b` 모델에 작업을 이관하고 소스코드를 작성 및 수정한다.
-3. **[Step 3] 검증 & Audit (Antigravity Verifier)**:
-   - 작성된 코드의 금융 산식을 검증하고 `npx tsc --noEmit` (타입 검사 0 에러) 및 `npm run build` (프로덕션 빌드)를 수행한다.
-4. **[Step 4] Git 반영 & 자동 배포**:
-   - Git repository에 커밋 및 푸시하여 Render 라이브 사이트에 자동 반영한다.
+1. **[Node 1: 요구사항 정밀 분석 (Antigravity Planner)]**:
+   - 사용자 요청의 금융 산식, 화면 구조, 인터랙션 유저 스토리 심층 분석.
+2. **[Node 2: 업무 분장 & 256K 플랜 명세화 (Antigravity Planner)]**:
+   - 로컬 Coder의 256K 컨텍스트 규격에 맞춰 컴포넌트 단위 업무 분장(Work Breakdown Structure) 및 고정밀 명세서 작성.
+3. **[Node 3: 로컬 소스코드 구현 (Cline Coder - `qwen2.5-coder:14b`)]**:
+   - 사용자 PC의 로컬 LLM으로 Antigravity의 상세 명세서를 수신하여 소스코드 작성.
+4. **[Node 4: 로컬 코드 1차 검증 (Cline Reviewer - `qwen2.5-coder:14b`)]**:
+   - 로컬 환경에서 Coder가 작성한 소스코드가 플래너의 명세서 및 256K 컨텍스트 용량에 맞게 작성되었는지 상호 점검 및 교정 피드백.
+5. **[Node 5: 최종 통합 리뷰 & TypeScript Build 검증 (Antigravity Reviewer)]**:
+   - 플래너(Antigravity)의 최초 지시사항과 Coder/Reviewer(Cline)의 최종 소스코드가 100% 일치하는지 정밀 검토.
+   - `npx tsc --noEmit` 타입 검사(0 에러) 및 `npm run build` 프로덕션 빌드 성공 검증. 조건 미달 시 Node 2로 피드백 피봇.
+6. **[Node 6: Git 커밋 & 라이브 배포 (Deployer Node)]**:
+   - Git Commit, GitHub Push 및 Render 웹 서비스 자동 재배포 트리거.
 
 ---
 

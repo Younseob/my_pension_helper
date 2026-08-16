@@ -20,23 +20,36 @@
 
 ---
 
-## 2. 역할 분담 및 에이전트 워크플로우 (Agent Workflow Protocol)
+## 2. 그래프 엔지니어링 에이전트 워크플로우 (Graph Engineering Architecture)
+
+본 프로젝트는 단순 단방향 루프가 아닌, **요구사항 분석 ➔ 업무 분장 ➔ 로컬 코딩 & 상호 검증 ➔ 최종 리뷰 & 통합**을 거치는 **지능형 멀티 에이전트 방향 그래프(Multi-Agent Directed Graph)** 파이프라인을 따릅니다.
 
 ```mermaid
-graph LR
-    A["1. 기획 & 설계 (Antigravity Planner)"] --> B["2. 로컬 CLI 코딩 (Cline CLI + qwen2.5-coder:14b)"]
-    B --> C["3. 수식 audit & 검증 (Antigravity Reviewer)"]
-    C --> D["4. Git Push & Auto Deploy (Render)"]
+graph TD
+    User([👤 사용자 요청]) --> Node1["1. 요구사항 정밀 분석 노드<br/>(Antigravity Planner)"]
+    Node1 --> Node2["2. 고정밀 업무 분장 & 256K 상세 플랜 명세 노드<br/>(Antigravity Planner)"]
+    Node2 --> Node3["3. 로컬 소스코드 구현 노드<br/>(Cline Coder: qwen2.5-coder:14b)"]
+    Node3 <-->|코드 수정 & 상호 피드백 검증| Node4["4. 로컬 코드 1차 검증 노드<br/>(Cline Reviewer: qwen2.5-coder:14b)"]
+    Node4 -->|1차 검증 완료| Node5["5. 최종 통합 리뷰 & TypeScript Build 검증 노드<br/>(Antigravity Reviewer)"]
+    
+    Node5 -- "요구사항 불일치 / 타입 에러 (Feedback)" --> Node2
+    Node5 -- "최종 승인 (Passed ✅)" --> Node6["6. Git Commit / Push & Render 배포 노드"]
 ```
 
-### 롤 정의 (Roles) & 컨텍스트 사양:
-1. **[Planner & Reviewer] Antigravity**:
-   - 사용자 요청에 대한 **정밀 분석(Deep Analysis)** 및 **상세 실행 플랜(High-Precision Plan)** 작성.
-   - Coder agent의 **256K 컨텍스트 윈도우(Context Size)** 용량을 적극 활용하여 아키텍처 설계, 수식, UI/UX 사양, 상태 흐름 및 예외 처리를 포함한 풍부하고 명확한 지시서 생성.
-   - 수학적 수식 검증(Financial Math Audit), 로컬 CLI 실행 제어, TypeScript 타입 검사(`tsc`), 빌드 및 배포 상태 검증.
-2. **[Local Coder] Cline CLI (qwen2.5-coder:14b - 256K Context)**:
-   - **컨텍스트 사이즈**: **256K (262,144 토큰)** 대용량 컨텍스트 윈도우 완비.
-   - 온라인 토큰 절감을 위해 사용자 PC의 로컬 Ollama 모델(`qwen2.5-coder:14b`)을 기반으로 Antigravity의 상세 플랜 지시서를 전달받아 파일 작성 및 코드 수정 전담.
+### 그래프 노드별 역할 정의 (Graph Node Roles):
+
+1. **[Node 1 & Node 2] Antigravity Planner (분석 & 플래너 노드)**:
+   - 사용자 요구사항의 금융 수학, UI/UX, 상태 흐름을 **정밀 심층 분석(Deep Requirement Analysis)**.
+   - Coder의 **256K 컨텍스트 윈도우**에 맞춘 파일별 역할 분담(Work Breakdown Structure) 및 상세 실행 지시서 작성.
+2. **[Node 3] Cline Coder (`qwen2.5-coder:14b`) (로컬 코더 노드)**:
+   - 사용자 PC의 로컬 Ollama 모델로 Antigravity의 상세 플랜을 전달받아 React/TypeScript 소스코드 작성.
+3. **[Node 4] Cline Reviewer (`qwen2.5-coder:14b`) (로컬 리뷰어 노드)**:
+   - 로컬 환경에서 작성된 코드가 플래너의 명세서 및 256K 컨텍스트 규격에 부합하는지 1차 상호 점검 및 교정 피드백 주고받기.
+4. **[Node 5] Antigravity Reviewer (최종 리뷰어 노드)**:
+   - 플래너(Antigravity)의 최초 요청사항과 최종 구현 코드가 100% 일치하는지 정밀 비교.
+   - `npx tsc --noEmit` 타입 검증, `npm run build` 프로덕션 빌드, 복리 산식 Audit 수행. 실패 시 Node 2로 피드백 피봇.
+5. **[Node 6] Deployer Node (배포 노드)**:
+   - Git Commit, GitHub Push 및 Render 라이브 서버 자동 재배포 실행.
 
 ---
 
