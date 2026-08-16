@@ -10,15 +10,16 @@
 
 ---
 
-## ⚙️ 제2조 (로컬 Cline CLI 실행 프로토콜)
-1. **실행 환경 사양**:
-   - **Ollama 서비스**: `http://localhost:11434` (`qwen2.5-coder:14b` 8.37GB 탑재)
-   - **Cline CLI 경로**: `C:\Users\gosys\AppData\Roaming\npm\cline.cmd`
-2. **터미널 이관 명령어 템플릿**:
+## ⚙️ 제2조 (로컬 Coder 에이전트 256K 컨텍스트 & Antigravity 정밀 플랜 수칙)
+1. **Coder 256K 컨텍스트 용량 활용**: 로컬 Coder 에이전트(`qwen2.5-coder:14b`)의 컨텍스트 용량은 **256K (262,144 토큰)**으로 설정되어 있으므로, Antigravity는 프롬프트 생략 없이 전체 프로젝트 구조, 컴포넌트 스키마, 상세 금융 산식, 예외 처리를 담은 풍부한 명세서를 전달한다.
+2. **Antigravity 심층 정밀 분석 (Deep Analysis & Detailed Plan)**:
+   - Antigravity는 사용자 요청 수신 시 단순 요약이 아닌, **정밀 요구사항 분석(Deep Requirement Analysis)**을 수행한다.
+   - 로컬 Coder가 한 번에 완성도 높은 코드를 작성할 수 있도록 모듈 설계, Props 인터페이스, Tailwind 스타일 가이드, 복리 유틸리티 연동법 및 대상 파일 경로가 작성된 **고정밀 상세 실행 플랜(High-Precision Plan)**을 작성하여 CLI에 전달한다.
+3. **터미널 이관 명령어 템플릿**:
    ```bash
-   cline --auto-approve true -P ollama -m qwen2.5-coder:14b "<상세 코딩 명세 프롬프트>"
+   cline --auto-approve true -P ollama -m qwen2.5-coder:14b "<정밀 상세 플랜 프롬프트>"
    ```
-3. **자동 승인 옵션**: 로컬 에이전트 실행 시 `--auto-approve true` 옵션을 필수로 포함하여 터미널 파일 입출력을 자율 승인으로 처리한다.
+4. **자동 승인 옵션**: 로컬 에이전트 실행 시 `--auto-approve true` 옵션을 필수로 포함하여 터미널 파일 입출력을 자율 승인으로 처리한다.
 
 ---
 

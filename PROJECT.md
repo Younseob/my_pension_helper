@@ -29,11 +29,14 @@ graph LR
     C --> D["4. Git Push & Auto Deploy (Render)"]
 ```
 
-### 롤 정의 (Roles):
+### 롤 정의 (Roles) & 컨텍스트 사양:
 1. **[Planner & Reviewer] Antigravity**:
-   - 기획(Specification), 수학적 수식 검증(Financial Math Audit), 로컬 CLI 실행 제어, TypeScript 타입 검사(`tsc`), 빌드 및 배포 상태 검증.
-2. **[Local Coder] Cline CLI (qwen2.5-coder:14b)**:
-   - 온라인 토큰 절감을 위해 사용자 PC의 로컬 Ollama 모델(`qwen2.5-coder:14b`)을 기반으로 파일 작성 및 코드 수정 전담.
+   - 사용자 요청에 대한 **정밀 분석(Deep Analysis)** 및 **상세 실행 플랜(High-Precision Plan)** 작성.
+   - Coder agent의 **256K 컨텍스트 윈도우(Context Size)** 용량을 적극 활용하여 아키텍처 설계, 수식, UI/UX 사양, 상태 흐름 및 예외 처리를 포함한 풍부하고 명확한 지시서 생성.
+   - 수학적 수식 검증(Financial Math Audit), 로컬 CLI 실행 제어, TypeScript 타입 검사(`tsc`), 빌드 및 배포 상태 검증.
+2. **[Local Coder] Cline CLI (qwen2.5-coder:14b - 256K Context)**:
+   - **컨텍스트 사이즈**: **256K (262,144 토큰)** 대용량 컨텍스트 윈도우 완비.
+   - 온라인 토큰 절감을 위해 사용자 PC의 로컬 Ollama 모델(`qwen2.5-coder:14b`)을 기반으로 Antigravity의 상세 플랜 지시서를 전달받아 파일 작성 및 코드 수정 전담.
 
 ---
 
@@ -42,6 +45,7 @@ graph LR
 ### 로컬 환경 사양:
 - **Ollama 경로**: `C:\Users\gosys\AppData\Local\Programs\Ollama\ollama.exe`
 - **사용 모델**: `qwen2.5-coder:14b` (Ollama 로컬 탑재)
+- **Coder Context Size**: **256K (262,144 Tokens)**
 - **Cline CLI 경로**: `C:\Users\gosys\AppData\Roaming\npm\cline.cmd`
 
 ### 코딩 작업 이관 명령 (Cline CLI Command):
