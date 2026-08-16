@@ -2,6 +2,8 @@ import React from 'react';
 import { Compass, BookOpen, Target, Download, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
+  activeTab: 'simulator' | 'tax_guide';
+  onSelectTab: (tab: 'simulator' | 'tax_guide') => void;
   onOpenGuide: () => void;
   onOpenTargetCalc: () => void;
   onResetDefaults: () => void;
@@ -9,6 +11,8 @@ interface HeaderProps {
 }
 
 export default function Header({
+  activeTab,
+  onSelectTab,
   onOpenGuide,
   onOpenTargetCalc,
   onResetDefaults,
@@ -18,18 +22,44 @@ export default function Header({
     <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo & Title */}
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-            <Compass className="w-6 h-6 text-slate-950 font-bold" />
-          </div>
-          <div>
-            <div className="flex items-center space-x-2">
-              <h1 className="text-lg font-bold text-slate-50 tracking-tight">초보자를 위한 연금 나침반</h1>
-              <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                15년 스노우볼 & 4% 룰
-              </span>
+        <div className="flex items-center space-x-3 sm:space-x-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+              <Compass className="w-6 h-6 text-slate-950 font-bold" />
             </div>
-            <p className="text-xs text-slate-300 hidden sm:block">미국 S&P 500 (70%) + NASDAQ 100 (30%) 포트폴리오 연금 시뮬레이터</p>
+            <div>
+              <div className="flex items-center space-x-2">
+                <h1 className="text-lg font-bold text-slate-50 tracking-tight">초보자를 위한 연금 나침반</h1>
+                <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hidden lg:inline">
+                  15년 스노우볼 & 4% 룰
+                </span>
+              </div>
+              <p className="text-xs text-slate-300 hidden xl:block">미국 S&P 500 (70%) + NASDAQ 100 (30%) 포트폴리오 연금 시뮬레이터</p>
+            </div>
+          </div>
+
+          {/* Navigation Tabs */}
+          <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
+            <button
+              onClick={() => onSelectTab('simulator')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                activeTab === 'simulator'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md'
+                  : 'text-slate-400 hover:text-slate-100'
+              }`}
+            >
+              📊 연금 시뮬레이터
+            </button>
+            <button
+              onClick={() => onSelectTab('tax_guide')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                activeTab === 'tax_guide'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md'
+                  : 'text-slate-400 hover:text-slate-100'
+              }`}
+            >
+              💡 절세계좌 & ETF 가이드
+            </button>
           </div>
         </div>
 

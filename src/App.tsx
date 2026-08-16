@@ -7,11 +7,15 @@ import CustomCalculator from './components/CustomCalculator';
 import YearlyScheduleTable from './components/YearlyScheduleTable';
 import EducationalGuide from './components/EducationalGuide';
 import TargetReverseCalculator from './components/TargetReverseCalculator';
+import TaxGuideTab from './components/TaxGuideTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
+  // Main Tab State: 'simulator' | 'tax_guide'
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide'>('simulator');
+
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
 
@@ -100,6 +104,8 @@ export default function App() {
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased flex flex-col">
       {/* Top Header */}
       <Header
+        activeTab={activeTab}
+        onSelectTab={setActiveTab}
         onOpenGuide={() => setIsGuideOpen(true)}
         onOpenTargetCalc={() => setIsTargetCalcOpen(true)}
         onResetDefaults={handleResetDefaults}
@@ -108,41 +114,47 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Concept Banner */}
-        <HeroBanner
-          activePreset={activePreset}
-          projectionData={projectionData}
-          onOpenGuide={() => setIsGuideOpen(true)}
-        />
+        {activeTab === 'simulator' ? (
+          <>
+            {/* Hero Concept Banner */}
+            <HeroBanner
+              activePreset={activePreset}
+              projectionData={projectionData}
+              onOpenGuide={() => setIsGuideOpen(true)}
+            />
 
-        {/* 3 Scenario Comparison Cards */}
-        <ScenarioCards
-          selectedPresetId={selectedPresetId}
-          onSelectPreset={handleSelectPreset}
-          baseParams={params}
-        />
+            {/* 3 Scenario Comparison Cards */}
+            <ScenarioCards
+              selectedPresetId={selectedPresetId}
+              onSelectPreset={handleSelectPreset}
+              baseParams={params}
+            />
 
-        {/* Dynamic 30-Year Simulation Chart */}
-        <SimulationChart
-          baseParams={params}
-          selectedPresetId={selectedPresetId}
-        />
+            {/* Dynamic 30-Year Simulation Chart */}
+            <SimulationChart
+              baseParams={params}
+              selectedPresetId={selectedPresetId}
+            />
 
-        {/* Interactive Custom Calculator Controls */}
-        <CustomCalculator
-          params={params}
-          onChangeParams={setParams}
-          onResetDefaults={handleResetDefaults}
-        />
+            {/* Interactive Custom Calculator Controls */}
+            <CustomCalculator
+              params={params}
+              onChangeParams={setParams}
+              onResetDefaults={handleResetDefaults}
+            />
 
-        {/* Year-by-Year Schedule Table */}
-        <YearlyScheduleTable
-          projectionData={{
-            ...projectionData,
-            activePresetName: activePreset.name
-          }}
-          onExportCSV={handleExportCSV}
-        />
+            {/* Year-by-Year Schedule Table */}
+            <YearlyScheduleTable
+              projectionData={{
+                ...projectionData,
+                activePresetName: activePreset.name
+              }}
+              onExportCSV={handleExportCSV}
+            />
+          </>
+        ) : (
+          <TaxGuideTab />
+        )}
       </main>
 
       {/* Educational Concept Guide Modal */}
