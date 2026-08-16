@@ -10,13 +10,14 @@ import TargetReverseCalculator from './components/TargetReverseCalculator';
 import TaxGuideTab from './components/TaxGuideTab';
 import DbToDcTab from './components/DbToDcTab';
 import TraditionalPensionTab from './components/TraditionalPensionTab';
+import ValuationDcaTab from './components/ValuationDcaTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
-  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock'
-  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock'>('simulator');
+  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca'
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca'>('simulator');
 
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
@@ -163,6 +164,11 @@ export default function App() {
         {/* 4. Traditional Conservative Pension vs US Stock Snowball Comparison Tab Content */}
         <div className={activeTab === 'traditional_vs_stock' ? 'block' : 'hidden'}>
           <TraditionalPensionTab />
+        </div>
+
+        {/* 5. 2026 Valuation (PER/EPS) Tracking & Smart DCA Signals Tab Content */}
+        <div className={activeTab === 'valuation_dca' ? 'block' : 'hidden'}>
+          <ValuationDcaTab />
         </div>
       </main>
 

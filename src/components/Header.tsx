@@ -2,8 +2,8 @@ import React from 'react';
 import { Compass, BookOpen, Target, Download, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock';
-  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock') => void;
+  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca';
+  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca') => void;
   onOpenGuide: () => void;
   onOpenTargetCalc: () => void;
   onResetDefaults: () => void;
@@ -39,7 +39,7 @@ export default function Header({
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 overflow-x-auto">
+          <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 overflow-x-auto space-x-1">
             <button
               onClick={() => onSelectTab('simulator')}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
@@ -79,6 +79,16 @@ export default function Header({
               }`}
             >
               🏛️ 전통 상품 성과 비교
+            </button>
+            <button
+              onClick={() => onSelectTab('valuation_dca')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+                activeTab === 'valuation_dca'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md'
+                  : 'text-slate-400 hover:text-slate-100'
+              }`}
+            >
+              📈 2026 PER·EPS & 분할매수 신호
             </button>
           </div>
         </div>
