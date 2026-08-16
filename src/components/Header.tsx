@@ -2,8 +2,8 @@ import React from 'react';
 import { Compass, BookOpen, Target, Download, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc';
-  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc') => void;
+  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock';
+  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock') => void;
   onOpenGuide: () => void;
   onOpenTargetCalc: () => void;
   onResetDefaults: () => void;
@@ -39,10 +39,10 @@ export default function Header({
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
+          <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 overflow-x-auto">
             <button
               onClick={() => onSelectTab('simulator')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
                 activeTab === 'simulator'
                   ? 'bg-emerald-500 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-slate-100'
@@ -52,7 +52,7 @@ export default function Header({
             </button>
             <button
               onClick={() => onSelectTab('tax_guide')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
                 activeTab === 'tax_guide'
                   ? 'bg-emerald-500 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-slate-100'
@@ -62,13 +62,23 @@ export default function Header({
             </button>
             <button
               onClick={() => onSelectTab('db_to_dc')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
                 activeTab === 'db_to_dc'
                   ? 'bg-emerald-500 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-slate-100'
               }`}
             >
               🔄 DB ➔ DC 전환 계산기
+            </button>
+            <button
+              onClick={() => onSelectTab('traditional_vs_stock')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+                activeTab === 'traditional_vs_stock'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md'
+                  : 'text-slate-400 hover:text-slate-100'
+              }`}
+            >
+              🏛️ 전통 상품 성과 비교
             </button>
           </div>
         </div>

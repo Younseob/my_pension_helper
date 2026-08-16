@@ -9,13 +9,14 @@ import EducationalGuide from './components/EducationalGuide';
 import TargetReverseCalculator from './components/TargetReverseCalculator';
 import TaxGuideTab from './components/TaxGuideTab';
 import DbToDcTab from './components/DbToDcTab';
+import TraditionalPensionTab from './components/TraditionalPensionTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
-  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc'
-  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc'>('simulator');
+  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock'
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock'>('simulator');
 
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
@@ -157,6 +158,11 @@ export default function App() {
         {/* 3. DB to DC Conversion Calculator Tab Content */}
         <div className={activeTab === 'db_to_dc' ? 'block' : 'hidden'}>
           <DbToDcTab />
+        </div>
+
+        {/* 4. Traditional Conservative Pension vs US Stock Snowball Comparison Tab Content */}
+        <div className={activeTab === 'traditional_vs_stock' ? 'block' : 'hidden'}>
+          <TraditionalPensionTab />
         </div>
       </main>
 
