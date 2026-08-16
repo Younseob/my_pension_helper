@@ -113,51 +113,51 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {activeTab === 'simulator' ? (
-          <>
-            {/* Hero Concept Banner */}
-            <HeroBanner
-              activePreset={activePreset}
-              projectionData={projectionData}
-              sp500Ratio={params.sp500Ratio}
-              nasdaqRatio={params.nasdaqRatio}
-              onOpenGuide={() => setIsGuideOpen(true)}
-            />
+        {/* 1. Simulator Tab Content */}
+        <div className={activeTab === 'simulator' ? 'block space-y-8' : 'hidden'}>
+          <HeroBanner
+            activePreset={activePreset}
+            projectionData={projectionData}
+            sp500Ratio={params.sp500Ratio}
+            nasdaqRatio={params.nasdaqRatio}
+            onOpenGuide={() => setIsGuideOpen(true)}
+          />
 
-            {/* 3 Scenario Comparison Cards */}
-            <ScenarioCards
-              selectedPresetId={selectedPresetId}
-              onSelectPreset={handleSelectPreset}
-              baseParams={params}
-            />
+          <ScenarioCards
+            selectedPresetId={selectedPresetId}
+            onSelectPreset={handleSelectPreset}
+            baseParams={params}
+          />
 
-            {/* Dynamic 30-Year Simulation Chart */}
-            <SimulationChart
-              baseParams={params}
-              selectedPresetId={selectedPresetId}
-            />
+          <SimulationChart
+            baseParams={params}
+            selectedPresetId={selectedPresetId}
+          />
 
-            {/* Interactive Custom Calculator Controls */}
-            <CustomCalculator
-              params={params}
-              onChangeParams={setParams}
-              onResetDefaults={handleResetDefaults}
-            />
+          <CustomCalculator
+            params={params}
+            onChangeParams={setParams}
+            onResetDefaults={handleResetDefaults}
+          />
 
-            {/* Year-by-Year Schedule Table */}
-            <YearlyScheduleTable
-              projectionData={{
-                ...projectionData,
-                activePresetName: activePreset.name
-              }}
-              onExportCSV={handleExportCSV}
-            />
-          </>
-        ) : activeTab === 'tax_guide' ? (
+          <YearlyScheduleTable
+            projectionData={{
+              ...projectionData,
+              activePresetName: activePreset.name
+            }}
+            onExportCSV={handleExportCSV}
+          />
+        </div>
+
+        {/* 2. Tax & ETF Strategy Guide Tab Content */}
+        <div className={activeTab === 'tax_guide' ? 'block' : 'hidden'}>
           <TaxGuideTab />
-        ) : (
+        </div>
+
+        {/* 3. DB to DC Conversion Calculator Tab Content */}
+        <div className={activeTab === 'db_to_dc' ? 'block' : 'hidden'}>
           <DbToDcTab />
-        )}
+        </div>
       </main>
 
       {/* Educational Concept Guide Modal */}
