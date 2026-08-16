@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,6 +13,7 @@ import {
   ChartDataset,
   Plugin
 } from 'chart.js';
+import { Line } from 'react-chartjs-2';
 import { PensionParams } from '../types/pension';
 import { PRESETS, calculatePensionTimeline, formatKRWShort, formatKRW } from '../utils/pensionMath';
 import { LineChart, BarChart2, PieChart, Info } from 'lucide-react';
@@ -38,9 +39,6 @@ export default function SimulationChart({
   baseParams, 
   selectedPresetId 
 }: SimulationChartProps) {
-  const chartRef = useRef<HTMLCanvasElement | null>(null);
-  const chartInstanceRef = useRef<ChartJS | null>(null);
-
   // Chart view modes: 
   // 'all_scenarios' = Compare Conservative, Average, Optimistic together
   // 'balance_vs_withdrawn' = Selected scenario balance vs cumulative withdrawn cash
@@ -80,276 +78,239 @@ export default function SimulationChart({
   const totalYears = baseParams.accumulationYears + baseParams.withdrawalYears;
   const labels = Array.from({ length: totalYears + 1 }, (_, i) => `${i}년차`);
 
-  useEffect(() => {
-    if (!chartRef.current) return;
+  // Build dataset based on chartMode
+  let datasets: ChartDataset<'line', number[]>[] = [];
 
-    // Destroy previous chart instance if exists
-    if (chartInstanceRef.current) {
-      chartInstanceRef.current.destroy();
-    }
-
-    const ctx = chartRef.current.getContext('2d');
-    if (!ctx) return;
-
-    // Build dataset based on chartMode
-    let datasets: ChartDataset<'line', number[]>[] = [];
-
-    if (chartMode === 'all_scenarios') {
-      datasets = [
-        {
-          label: '보수적 (CAGR 7.0%)',
-          data: conservativeResult.yearlyTimeline.map(d => d.endAsset),
-          borderColor: '#3b82f6',
-          backgroundColor: 'rgba(59, 130, 246, 0.08)',
-          borderWidth: selectedPresetId === 'conservative' ? 3.5 : 2,
-          pointRadius: 2,
-          pointHoverRadius: 6,
-          fill: selectedPresetId === 'conservative' ? 'origin' : false,
-          tension: 0.2,
-        },
-        {
-          label: '평균적 (CAGR 11.0%)',
-          data: averageResult.yearlyTimeline.map(d => d.endAsset),
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(16, 185, 129, 0.1)',
-          borderWidth: selectedPresetId === 'average' ? 3.5 : 2,
-          pointRadius: 2,
-          pointHoverRadius: 6,
-          fill: selectedPresetId === 'average' ? 'origin' : false,
-          tension: 0.2,
-        },
-        {
-          label: '희망적 (CAGR 13.8%)',
-          data: optimisticResult.yearlyTimeline.map(d => d.endAsset),
-          borderColor: '#8b5cf6',
-          backgroundColor: 'rgba(139, 92, 246, 0.08)',
-          borderWidth: selectedPresetId === 'optimistic' ? 3.5 : 2,
-          pointRadius: 2,
-          pointHoverRadius: 6,
-          fill: selectedPresetId === 'optimistic' ? 'origin' : false,
-          tension: 0.2,
-        }
-      ];
-    } else if (chartMode === 'balance_vs_withdrawn') {
-      datasets = [
-        {
-          label: `${activePreset.name} 자산 잔액`,
-          data: activeResult.yearlyTimeline.map(d => d.endAsset),
-          borderColor: activePreset.color,
-          backgroundColor: activePreset.color + '20',
-          borderWidth: 3,
-          pointRadius: 3,
-          pointHoverRadius: 6,
-          fill: true,
-          tension: 0.2,
-        },
-        {
-          label: '누적 연금 인출액',
-          data: activeResult.yearlyTimeline.map(d => d.totalWithdrawnCumulative),
-          borderColor: '#f59e0b',
-          backgroundColor: 'rgba(245, 158, 11, 0.2)',
-          borderWidth: 2.5,
-          borderDash: [5, 5],
-          pointRadius: 2,
-          pointHoverRadius: 6,
-          fill: false,
-          tension: 0.2,
-        }
-      ];
-    } else if (chartMode === 'asset_breakdown') {
-      datasets = [
-        {
-          label: `S&P 500 자산 (${baseParams.sp500Ratio}%)`,
-          data: activeResult.yearlyTimeline.map(d => d.sp500Asset),
-          borderColor: '#0284c7',
-          backgroundColor: 'rgba(2, 132, 199, 0.15)',
-          borderWidth: 2.5,
-          pointRadius: 2,
-          fill: true,
-          tension: 0.2,
-        },
-        {
-          label: `NASDAQ 100 자산 (${baseParams.nasdaqRatio}%)`,
-          data: activeResult.yearlyTimeline.map(d => d.nasdaqAsset),
-          borderColor: '#ec4899',
-          backgroundColor: 'rgba(236, 72, 153, 0.15)',
-          borderWidth: 2.5,
-          pointRadius: 2,
-          fill: true,
-          tension: 0.2,
-        }
-      ];
-    }
-
-    // Custom background plugin to shade Accumulation vs Withdrawal phases
-    const phasePlugin: Plugin<'line'> = {
-      id: 'phaseBackground',
-      beforeDraw: (chart) => {
-        try {
-          const { ctx, chartArea, scales } = chart;
-          if (!chartArea || !scales || !scales.x) return;
-
-          const accYears = baseParams.accumulationYears;
-          let xAccEnd = scales.x.getPixelForValue(accYears);
-          
-          if (isNaN(xAccEnd) || !isFinite(xAccEnd) || xAccEnd === 0) {
-            const ratio = accYears / (totalYears > 0 ? totalYears : 1);
-            xAccEnd = chartArea.left + (chartArea.width * ratio);
-          }
-          
-          if (isNaN(xAccEnd) || !isFinite(xAccEnd)) return;
-
-          ctx.save();
-
-          // 1. Accumulation Phase Background
-          if (xAccEnd > chartArea.left) {
-            ctx.fillStyle = 'rgba(16, 185, 129, 0.05)';
-            ctx.fillRect(
-              chartArea.left,
-              chartArea.top,
-              Math.min(xAccEnd, chartArea.right) - chartArea.left,
-              chartArea.height
-            );
-          }
-
-          // 2. Withdrawal Phase Background
-          if (xAccEnd < chartArea.right) {
-            ctx.fillStyle = 'rgba(139, 92, 246, 0.05)';
-            ctx.fillRect(
-              Math.max(xAccEnd, chartArea.left),
-              chartArea.top,
-              chartArea.right - Math.max(xAccEnd, chartArea.left),
-              chartArea.height
-            );
-          }
-
-          // 3. Vertical Dividing Line at Year 15
-          ctx.beginPath();
-          ctx.setLineDash([4, 4]);
-          ctx.strokeStyle = '#f59e0b';
-          ctx.lineWidth = 1.5;
-          ctx.moveTo(xAccEnd, chartArea.top);
-          ctx.lineTo(xAccEnd, chartArea.bottom);
-          ctx.stroke();
-
-          // Label on vertical line
-          ctx.font = 'bold 11px sans-serif';
-          ctx.fillStyle = '#f59e0b';
-          ctx.fillText(` 은퇴 시점 (${accYears}년차)`, Math.min(xAccEnd + 4, chartArea.right - 90), chartArea.top + 18);
-
-          ctx.restore();
-        } catch (e) {
-          console.warn('phasePlugin draw error:', e);
-        }
+  if (chartMode === 'all_scenarios') {
+    datasets = [
+      {
+        label: '보수적 (CAGR 7.0%)',
+        data: conservativeResult.yearlyTimeline.map(d => d.endAsset),
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59, 130, 246, 0.08)',
+        borderWidth: selectedPresetId === 'conservative' ? 3.5 : 2,
+        pointRadius: 2,
+        pointHoverRadius: 6,
+        fill: selectedPresetId === 'conservative' ? 'origin' : false,
+        tension: 0.2,
+      },
+      {
+        label: '평균적 (CAGR 11.0%)',
+        data: averageResult.yearlyTimeline.map(d => d.endAsset),
+        borderColor: '#10b981',
+        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+        borderWidth: selectedPresetId === 'average' ? 3.5 : 2,
+        pointRadius: 2,
+        pointHoverRadius: 6,
+        fill: selectedPresetId === 'average' ? 'origin' : false,
+        tension: 0.2,
+      },
+      {
+        label: '희망적 (CAGR 13.8%)',
+        data: optimisticResult.yearlyTimeline.map(d => d.endAsset),
+        borderColor: '#8b5cf6',
+        backgroundColor: 'rgba(139, 92, 246, 0.08)',
+        borderWidth: selectedPresetId === 'optimistic' ? 3.5 : 2,
+        pointRadius: 2,
+        pointHoverRadius: 6,
+        fill: selectedPresetId === 'optimistic' ? 'origin' : false,
+        tension: 0.2,
       }
-    };
-
-    try {
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy();
-        chartInstanceRef.current = null;
+    ];
+  } else if (chartMode === 'balance_vs_withdrawn') {
+    datasets = [
+      {
+        label: `${activePreset.name} 자산 잔액`,
+        data: activeResult.yearlyTimeline.map(d => d.endAsset),
+        borderColor: activePreset.color,
+        backgroundColor: activePreset.color + '20',
+        borderWidth: 3,
+        pointRadius: 3,
+        pointHoverRadius: 6,
+        fill: true,
+        tension: 0.2,
+      },
+      {
+        label: '누적 연금 인출액',
+        data: activeResult.yearlyTimeline.map(d => d.totalWithdrawnCumulative),
+        borderColor: '#f59e0b',
+        backgroundColor: 'rgba(245, 158, 11, 0.2)',
+        borderWidth: 2.5,
+        borderDash: [5, 5],
+        pointRadius: 2,
+        pointHoverRadius: 6,
+        fill: false,
+        tension: 0.2,
       }
+    ];
+  } else if (chartMode === 'asset_breakdown') {
+    datasets = [
+      {
+        label: `S&P 500 자산 (${baseParams.sp500Ratio}%)`,
+        data: activeResult.yearlyTimeline.map(d => d.sp500Asset),
+        borderColor: '#0284c7',
+        backgroundColor: 'rgba(2, 132, 199, 0.15)',
+        borderWidth: 2.5,
+        pointRadius: 2,
+        fill: true,
+        tension: 0.2,
+      },
+      {
+        label: `NASDAQ 100 자산 (${baseParams.nasdaqRatio}%)`,
+        data: activeResult.yearlyTimeline.map(d => d.nasdaqAsset),
+        borderColor: '#ec4899',
+        backgroundColor: 'rgba(236, 72, 153, 0.15)',
+        borderWidth: 2.5,
+        pointRadius: 2,
+        fill: true,
+        tension: 0.2,
+      }
+    ];
+  }
 
-      chartInstanceRef.current = new ChartJS(ctx, {
-        type: 'line',
-        data: {
-          labels,
-          datasets,
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: {
-            mode: 'index',
-            intersect: false,
+  // Custom background plugin to shade Accumulation vs Withdrawal phases
+  const phasePlugin: Plugin<'line'> = {
+    id: 'phaseBackground',
+    beforeDraw: (chart) => {
+      try {
+        const { ctx, chartArea } = chart;
+        if (!chartArea) return;
+
+        const accYears = baseParams.accumulationYears;
+        const ratio = accYears / (totalYears > 0 ? totalYears : 1);
+        const xAccEnd = chartArea.left + (chartArea.width * ratio);
+
+        ctx.save();
+
+        // 1. Accumulation Phase Background
+        if (xAccEnd > chartArea.left) {
+          ctx.fillStyle = 'rgba(16, 185, 129, 0.05)';
+          ctx.fillRect(
+            chartArea.left,
+            chartArea.top,
+            Math.min(xAccEnd, chartArea.right) - chartArea.left,
+            chartArea.height
+          );
+        }
+
+        // 2. Withdrawal Phase Background
+        if (xAccEnd < chartArea.right) {
+          ctx.fillStyle = 'rgba(139, 92, 246, 0.05)';
+          ctx.fillRect(
+            Math.max(xAccEnd, chartArea.left),
+            chartArea.top,
+            chartArea.right - Math.max(xAccEnd, chartArea.left),
+            chartArea.height
+          );
+        }
+
+        // 3. Vertical Dividing Line at Year 15
+        ctx.beginPath();
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 1.5;
+        ctx.moveTo(xAccEnd, chartArea.top);
+        ctx.lineTo(xAccEnd, chartArea.bottom);
+        ctx.stroke();
+
+        // Label on vertical line
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillStyle = '#f59e0b';
+        ctx.fillText(` 은퇴 시점 (${accYears}년차)`, Math.min(xAccEnd + 4, chartArea.right - 90), chartArea.top + 18);
+
+        ctx.restore();
+      } catch (e) {
+        console.warn('phasePlugin draw error:', e);
+      }
+    }
+  };
+
+  const chartData = {
+    labels,
+    datasets,
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: {
+      mode: 'index' as const,
+      intersect: false,
+    },
+    plugins: {
+      legend: {
+        position: 'top' as const,
+        labels: {
+          color: '#94a3b8',
+          font: {
+            size: 12,
+            family: 'Pretendard',
           },
-          plugins: {
-            legend: {
-              position: 'top',
-              labels: {
-                color: '#94a3b8',
-                font: {
-                  size: 12,
-                  family: 'Pretendard',
-                },
-                usePointStyle: true,
-                boxWidth: 8,
-              },
-            },
-            tooltip: {
-              backgroundColor: '#0f172a',
-              borderColor: '#334155',
-              borderWidth: 1,
-              titleColor: '#f8fafc',
-              bodyColor: '#cbd5e1',
-              padding: 12,
-              boxPadding: 6,
-              usePointStyle: true,
-              callbacks: {
-                title: (tooltipItems) => {
-                  const yearIndex = tooltipItems[0].dataIndex;
-                  const phaseText = yearIndex <= baseParams.accumulationYears 
-                    ? '🌱 자산 적립기 (15년 스노우볼)' 
-                    : '🌴 연금 인출기 (4% 룰 적용)';
-                  return `${yearIndex}년차 | ${phaseText}`;
-                },
-                label: (context) => {
-                  const label = context.dataset.label || '';
-                  const value = context.parsed.y;
-                  return `${label}: ${formatKRW(value)}`;
-                },
-                afterBody: (tooltipItems) => {
-                  const yearIndex = tooltipItems[0].dataIndex;
-                  if (yearIndex > baseParams.accumulationYears) {
-                    const item = activeResult.yearlyTimeline[yearIndex];
-                    if (item && item.monthlyIncome > 0) {
-                      return [
-                        `──────────────────`,
-                        `💡 당해 월 연금 수령: 월 ${formatKRW(item.monthlyIncome)}`,
-                        `💡 연간 총 인출액: ${formatKRW(item.annualWithdrawal)}`
-                      ];
-                    }
-                  }
-                  return [];
-                }
+          usePointStyle: true,
+          boxWidth: 8,
+        },
+      },
+      tooltip: {
+        backgroundColor: '#0f172a',
+        borderColor: '#334155',
+        borderWidth: 1,
+        titleColor: '#f8fafc',
+        bodyColor: '#cbd5e1',
+        padding: 12,
+        boxPadding: 6,
+        usePointStyle: true,
+        callbacks: {
+          title: (tooltipItems: any[]) => {
+            const yearIndex = tooltipItems[0].dataIndex;
+            const phaseText = yearIndex <= baseParams.accumulationYears 
+              ? '🌱 자산 적립기 (15년 스노우볼)' 
+              : '🌴 연금 인출기 (4% 룰 적용)';
+            return `${yearIndex}년차 | ${phaseText}`;
+          },
+          label: (context: any) => {
+            const label = context.dataset.label || '';
+            const value = context.parsed.y;
+            return `${label}: ${formatKRW(value)}`;
+          },
+          afterBody: (tooltipItems: any[]) => {
+            const yearIndex = tooltipItems[0].dataIndex;
+            if (yearIndex > baseParams.accumulationYears) {
+              const item = activeResult.yearlyTimeline[yearIndex];
+              if (item && item.monthlyIncome > 0) {
+                return [
+                  `──────────────────`,
+                  `💡 당해 월 연금 수령: 월 ${formatKRW(item.monthlyIncome)}`,
+                  `💡 연간 총 인출액: ${formatKRW(item.annualWithdrawal)}`
+                ];
               }
             }
-          },
-          scales: {
-            x: {
-              grid: {
-                color: '#1e293b',
-              },
-              ticks: {
-                color: '#64748b',
-                font: { size: 11 },
-              }
-            },
-            y: {
-              grid: {
-                color: '#1e293b',
-              },
-              ticks: {
-                color: '#64748b',
-                font: { size: 11 },
-                callback: (value) => formatKRWShort(typeof value === 'number' ? value : parseFloat(value as string)),
-              }
-            }
+            return [];
           }
-        },
-        plugins: [phasePlugin]
-      });
-    } catch (err) {
-      console.error('ChartJS Initialization Error:', err);
-    }
-
-    return () => {
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy();
-        chartInstanceRef.current = null;
+        }
       }
-    };
-  }, [chartMode, baseParams, selectedPresetId]);
+    },
+    scales: {
+      x: {
+        grid: {
+          color: '#1e293b',
+        },
+        ticks: {
+          color: '#64748b',
+          font: { size: 11 },
+        }
+      },
+      y: {
+        grid: {
+          color: '#1e293b',
+        },
+        ticks: {
+          color: '#64748b',
+          font: { size: 11 },
+          callback: (value: any) => formatKRWShort(typeof value === 'number' ? value : parseFloat(value as string)),
+        }
+      }
+    }
+  };
 
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl mb-8">
@@ -405,9 +366,14 @@ export default function SimulationChart({
         </div>
       </div>
 
-      {/* Main Chart Canvas Container */}
+      {/* Main Chart Component */}
       <div className="relative h-80 sm:h-96 w-full">
-        <canvas ref={chartRef} />
+        <Line
+          key={`${chartMode}-${selectedPresetId}-${baseParams.accumulationYears}-${baseParams.withdrawalYears}`}
+          data={chartData}
+          options={chartOptions}
+          plugins={[phasePlugin]}
+        />
       </div>
 
       {/* Chart Legend Explanation Banner */}
