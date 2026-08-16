@@ -22,11 +22,11 @@ export default function ScenarioCards({
         <div>
           <h3 className="text-xl font-bold text-slate-50 flex items-center gap-2">
             <span>역사적 수익률 기반 3대 시나리오 비교</span>
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-200 font-normal border border-slate-700">
-              S&P500 70% : 나스닥 30%
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">
+              S&P500 {baseParams.sp500Ratio}% : 나스닥 {baseParams.nasdaqRatio}%
             </span>
           </h3>
-          <p className="text-xs text-slate-300">시나리오 카드를 클릭하면 해당 조건의 상세 데이터와 시뮬레이션 그래프를 확인하실 수 있습니다.</p>
+          <p className="text-xs text-slate-300">포트폴리오 비중 조절 시 각 시나리오별 예상 자산과 연금 수령액이 실시간 업데이트됩니다.</p>
         </div>
       </div>
 
@@ -35,11 +35,13 @@ export default function ScenarioCards({
           const preset: PresetScenario = PRESETS[key];
           const isSelected = selectedPresetId === preset.id;
           
+          const dynamicCagr = Math.round(((baseParams.sp500Ratio / 100) * preset.sp500Return + (baseParams.nasdaqRatio / 100) * preset.nasdaqReturn) * 10) / 10;
+
           const result = calculatePensionTimeline({
             ...baseParams,
             sp500Return: preset.sp500Return,
             nasdaqReturn: preset.nasdaqReturn,
-            cagrOverride: preset.weightedCagr
+            cagrOverride: dynamicCagr
           });
 
           return (
@@ -95,7 +97,7 @@ export default function ScenarioCards({
                 </div>
                 <div className="border-l border-slate-800">
                   <div className="text-[10px] text-emerald-400 font-medium">가중 CAGR</div>
-                  <div className="text-xs font-bold text-emerald-400">{preset.weightedCagr}%</div>
+                  <div className="text-xs font-bold text-emerald-400">{dynamicCagr}%</div>
                 </div>
               </div>
 

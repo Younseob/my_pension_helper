@@ -6,10 +6,12 @@ import { formatKRW, formatKRWShort } from '../utils/pensionMath';
 interface HeroBannerProps {
   activePreset: PresetScenario;
   projectionData: CalculationResult;
+  sp500Ratio: number;
+  nasdaqRatio: number;
   onOpenGuide: () => void;
 }
 
-export default function HeroBanner({ activePreset, projectionData, onOpenGuide }: HeroBannerProps) {
+export default function HeroBanner({ activePreset, projectionData, sp500Ratio, nasdaqRatio, onOpenGuide }: HeroBannerProps) {
   const { 
     initialInvestment, 
     accumulatedPrincipalAtRetirement, 
@@ -40,7 +42,7 @@ export default function HeroBanner({ activePreset, projectionData, onOpenGuide }
           </h2>
 
           <p className="text-sm text-slate-200 leading-relaxed">
-            미국 시장을 이끄는 <strong className="text-white font-semibold">S&P 500 (70%)</strong>과 고성장 <strong className="text-white font-semibold">NASDAQ 100 (30%)</strong>에 15년 동안 장기 투자한 뒤, <strong className="text-emerald-400 font-semibold">4% 룰(Trinity Rule)</strong>에 따라 매년 연금을 수령하는 초보자 맞춤형 노후 솔루션입니다.
+            미국 시장을 이끄는 <strong className="text-white font-semibold">S&P 500 ({sp500Ratio}%)</strong>과 고성장 <strong className="text-white font-semibold">NASDAQ 100 ({nasdaqRatio}%)</strong>에 15년 동안 장기 투자한 뒤, <strong className="text-emerald-400 font-semibold">4% 룰(Trinity Rule)</strong>에 따라 매년 연금을 수령하는 초보자 맞춤형 노후 솔루션입니다.
           </p>
 
           {/* Quick Specs Badges */}
@@ -58,7 +60,7 @@ export default function HeroBanner({ activePreset, projectionData, onOpenGuide }
                 <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                 포트폴리오
               </div>
-              <div className="text-base font-bold text-slate-50 mt-0.5">70 : 30</div>
+              <div className="text-base font-bold text-emerald-400 mt-0.5">{sp500Ratio} : {nasdaqRatio}</div>
               <div className="text-[10px] text-slate-400">S&P500 : 나스닥</div>
             </div>
 

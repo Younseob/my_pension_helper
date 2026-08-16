@@ -71,9 +71,7 @@ export default function App() {
     ...params,
     sp500Return: params.sp500Return,
     nasdaqReturn: params.nasdaqReturn,
-    cagrOverride: (params.sp500Ratio === 70 && params.nasdaqRatio === 30 && params.sp500Return === activePreset.sp500Return && params.nasdaqReturn === activePreset.nasdaqReturn)
-      ? activePreset.weightedCagr
-      : null
+    cagrOverride: null // Dynamically calculate based on current sp500Ratio & nasdaqRatio
   });
 
   // Export full 30-year simulation table as CSV file
@@ -120,6 +118,8 @@ export default function App() {
             <HeroBanner
               activePreset={activePreset}
               projectionData={projectionData}
+              sp500Ratio={params.sp500Ratio}
+              nasdaqRatio={params.nasdaqRatio}
               onOpenGuide={() => setIsGuideOpen(true)}
             />
 
