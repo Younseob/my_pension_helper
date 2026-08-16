@@ -185,47 +185,62 @@ export default function SimulationChart({
     const phasePlugin: Plugin<'line'> = {
       id: 'phaseBackground',
       beforeDraw: (chart) => {
-        const { ctx, chartArea, scales } = chart;
-        if (!chartArea || !scales.x) return;
+        try {
+          const { ctx, chartArea, scales } = chart;
+          if (!chartArea || !scales || !scales.x) return;
 
-        const accYears = baseParams.accumulationYears;
-        const xAccEnd = scales.x.getPixelForValue(accYears);
+          const accYears = baseParams.accumulationYears;
+          let xAccEnd = scales.x.getPixelForValue(accYears);
+          
+          if (isNaN(xAccEnd) || !isFinite(xAccEnd) || xAccEnd === 0) {
+            const ratio = accYears / (totalYears > 0 ? totalYears : 1);
+            xAccEnd = chartArea.left + (chartArea.width * ratio);
+          }
+          
+          if (isNaN(xAccEnd) || !isFinite(xAccEnd)) return;
 
-        ctx.save();
+          ctx.save();
 
-        // 1. Accumulation Phase Background
-        ctx.fillStyle = 'rgba(16, 185, 129, 0.03)';
-        ctx.fillRect(
-          chartArea.left,
-          chartArea.top,
-          xAccEnd - chartArea.left,
-          chartArea.height
-        );
+          // 1. Accumulation Phase Background
+          if (xAccEnd > chartArea.left) {
+            ctx.fillStyle = 'rgba(16, 185, 129, 0.05)';
+            ctx.fillRect(
+              chartArea.left,
+              chartArea.top,
+              Math.min(xAccEnd, chartArea.right) - chartArea.left,
+              chartArea.height
+            );
+          }
 
-        // 2. Withdrawal Phase Background
-        ctx.fillStyle = 'rgba(139, 92, 246, 0.03)';
-        ctx.fillRect(
-          xAccEnd,
-          chartArea.top,
-          chartArea.right - xAccEnd,
-          chartArea.height
-        );
+          // 2. Withdrawal Phase Background
+          if (xAccEnd < chartArea.right) {
+            ctx.fillStyle = 'rgba(139, 92, 246, 0.05)';
+            ctx.fillRect(
+              Math.max(xAccEnd, chartArea.left),
+              chartArea.top,
+              chartArea.right - Math.max(xAccEnd, chartArea.left),
+              chartArea.height
+            );
+          }
 
-        // 3. Vertical Dividing Line at Year 15
-        ctx.beginPath();
-        ctx.setLineDash([4, 4]);
-        ctx.strokeStyle = '#f59e0b';
-        ctx.lineWidth = 1.5;
-        ctx.moveTo(xAccEnd, chartArea.top);
-        ctx.lineTo(xAccEnd, chartArea.bottom);
-        ctx.stroke();
+          // 3. Vertical Dividing Line at Year 15
+          ctx.beginPath();
+          ctx.setLineDash([4, 4]);
+          ctx.strokeStyle = '#f59e0b';
+          ctx.lineWidth = 1.5;
+          ctx.moveTo(xAccEnd, chartArea.top);
+          ctx.lineTo(xAccEnd, chartArea.bottom);
+          ctx.stroke();
 
-        // Label on vertical line
-        ctx.font = 'bold 11px sans-serif';
-        ctx.fillStyle = '#f59e0b';
-        ctx.fillText(` 은퇴 시점 (${accYears}년차)`, xAccEnd + 4, chartArea.top + 18);
+          // Label on vertical line
+          ctx.font = 'bold 11px sans-serif';
+          ctx.fillStyle = '#f59e0b';
+          ctx.fillText(` 은퇴 시점 (${accYears}년차)`, Math.min(xAccEnd + 4, chartArea.right - 90), chartArea.top + 18);
 
-        ctx.restore();
+          ctx.restore();
+        } catch (e) {
+          console.warn('phasePlugin draw error:', e);
+        }
       }
     };
 
