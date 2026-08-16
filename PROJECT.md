@@ -1,6 +1,7 @@
 # 📌 PROJECT.md - 초보자를 위한 연금 나침반 (Pension Helper)
 
 이 파일은 새로운 세션이 시작될 때 프로젝트 설정, 워크플로우, 로컬 LLM 연동 방식 및 개발 환경을 복원하기 위한 컨텍스트 정의 문서입니다.
+**필수 운용 수칙**: 본 프로젝트의 모든 코딩 작업은 [rules.md](file:///C:/Users/gosys/orca/my_pension_helper/rules.md) 규정에 따라 사용자 PC 로컬 `cline` CLI (`qwen2.5-coder:14b`)를 필수 운용하여 이행합니다.
 
 ---
 
