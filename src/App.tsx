@@ -8,13 +8,14 @@ import YearlyScheduleTable from './components/YearlyScheduleTable';
 import EducationalGuide from './components/EducationalGuide';
 import TargetReverseCalculator from './components/TargetReverseCalculator';
 import TaxGuideTab from './components/TaxGuideTab';
+import DbToDcTab from './components/DbToDcTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
-  // Main Tab State: 'simulator' | 'tax_guide'
-  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide'>('simulator');
+  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc'
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc'>('simulator');
 
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
@@ -152,8 +153,10 @@ export default function App() {
               onExportCSV={handleExportCSV}
             />
           </>
-        ) : (
+        ) : activeTab === 'tax_guide' ? (
           <TaxGuideTab />
+        ) : (
+          <DbToDcTab />
         )}
       </main>
 

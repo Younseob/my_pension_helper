@@ -2,8 +2,8 @@ import React from 'react';
 import { Compass, BookOpen, Target, Download, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'simulator' | 'tax_guide';
-  onSelectTab: (tab: 'simulator' | 'tax_guide') => void;
+  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc';
+  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc') => void;
   onOpenGuide: () => void;
   onOpenTargetCalc: () => void;
   onResetDefaults: () => void;
@@ -59,6 +59,16 @@ export default function Header({
               }`}
             >
               💡 절세계좌 & ETF 가이드
+            </button>
+            <button
+              onClick={() => onSelectTab('db_to_dc')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                activeTab === 'db_to_dc'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md'
+                  : 'text-slate-400 hover:text-slate-100'
+              }`}
+            >
+              🔄 DB ➔ DC 전환 계산기
             </button>
           </div>
         </div>
