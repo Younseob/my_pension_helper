@@ -2,8 +2,8 @@ import React from 'react';
 import { Compass, BookOpen, Target, Download, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca';
-  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca') => void;
+  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf';
+  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf') => void;
   onOpenGuide: () => void;
   onOpenTargetCalc: () => void;
   onResetDefaults: () => void;
@@ -89,6 +89,16 @@ export default function Header({
               }`}
             >
               📈 2026 PER·EPS & 분할매수 신호
+            </button>
+            <button
+              onClick={() => onSelectTab('active_etf')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+                activeTab === 'active_etf'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md'
+                  : 'text-slate-400 hover:text-slate-100'
+              }`}
+            >
+              🚀 액티브 ETF 비교
             </button>
           </div>
         </div>

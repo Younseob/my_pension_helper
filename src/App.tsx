@@ -11,13 +11,14 @@ import TaxGuideTab from './components/TaxGuideTab';
 import DbToDcTab from './components/DbToDcTab';
 import TraditionalPensionTab from './components/TraditionalPensionTab';
 import ValuationDcaTab from './components/ValuationDcaTab';
+import { ActiveEtfTab } from './components/ActiveEtfTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
-  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca'
-  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca'>('simulator');
+  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf'
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf'>('simulator');
 
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
@@ -169,6 +170,10 @@ export default function App() {
         {/* 5. 2026 Valuation (PER/EPS) Tracking & Smart DCA Signals Tab Content */}
         <div className={activeTab === 'valuation_dca' ? 'block' : 'hidden'}>
           <ValuationDcaTab />
+        </div>
+
+        <div className={activeTab === 'active_etf' ? 'block' : 'hidden'}>
+          <ActiveEtfTab />
         </div>
       </main>
 
