@@ -1,147 +1,32 @@
 import React from 'react';
-import { Compass, BookOpen, Target, Download, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf';
-  onSelectTab: (tab: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf') => void;
   onOpenGuide: () => void;
   onOpenTargetCalc: () => void;
   onResetDefaults: () => void;
   onExportCSV: () => void;
 }
 
-export default function Header({
-  activeTab,
-  onSelectTab,
-  onOpenGuide,
-  onOpenTargetCalc,
-  onResetDefaults,
-  onExportCSV
-}: HeaderProps) {
+const Header: React.FC<HeaderProps> = ({ onOpenGuide, onOpenTargetCalc, onResetDefaults, onExportCSV }) => {
   return (
-    <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand Logo & Title */}
-        <div className="flex items-center space-x-3 sm:space-x-6">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <Compass className="w-6 h-6 text-slate-950 font-bold" />
-            </div>
-            <div>
-              <div className="flex items-center space-x-2">
-                <h1 className="text-lg font-bold text-slate-50 tracking-tight">초보자를 위한 연금 나침반</h1>
-                <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hidden lg:inline">
-                  15년 스노우볼 & 4% 룰
-                </span>
-              </div>
-              <p className="text-xs text-slate-300 hidden xl:block">미국 S&P 500 (70%) + NASDAQ 100 (30%) 포트폴리오 연금 시뮬레이터</p>
-            </div>
-          </div>
-
-          {/* Navigation Tabs */}
-          <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 overflow-x-auto space-x-1">
-            <button
-              onClick={() => onSelectTab('simulator')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                activeTab === 'simulator'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-slate-100'
-              }`}
-            >
-              📊 연금 시뮬레이터
-            </button>
-            <button
-              onClick={() => onSelectTab('tax_guide')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                activeTab === 'tax_guide'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-slate-100'
-              }`}
-            >
-              💡 절세계좌 & ETF 가이드
-            </button>
-            <button
-              onClick={() => onSelectTab('db_to_dc')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                activeTab === 'db_to_dc'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-slate-100'
-              }`}
-            >
-              🔄 DB ➔ DC 전환 계산기
-            </button>
-            <button
-              onClick={() => onSelectTab('traditional_vs_stock')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                activeTab === 'traditional_vs_stock'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-slate-100'
-              }`}
-            >
-              🏛️ 전통 상품 성과 비교
-            </button>
-            <button
-              onClick={() => onSelectTab('valuation_dca')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                activeTab === 'valuation_dca'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-slate-100'
-              }`}
-            >
-              📈 2026 PER·EPS & 분할매수 신호
-            </button>
-            <button
-              onClick={() => onSelectTab('active_etf')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                activeTab === 'active_etf'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-slate-100'
-              }`}
-            >
-              🚀 액티브 ETF 비교
-            </button>
-          </div>
-        </div>
-
-        {/* Header Action Buttons */}
-        <div className="flex items-center space-x-2 sm:space-x-3">
-          <button
-            onClick={onOpenGuide}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all hover:shadow-md"
-            title="S&P500, 나스닥, 4% 룰 이란?"
-          >
-            <BookOpen className="w-4 h-4 text-emerald-400" />
-            <span className="hidden md:inline">초보자 개념 가이드</span>
-            <span className="md:hidden">가이드</span>
-          </button>
-
-          <button
-            onClick={onOpenTargetCalc}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-md shadow-emerald-900/30 transition-all"
-            title="원하는 월 연금액으로 역산하기"
-          >
-            <Target className="w-4 h-4" />
-            <span className="hidden sm:inline">목표 연금 역산기</span>
-            <span className="sm:hidden">목표 역산</span>
-          </button>
-
-          <button
-            onClick={onExportCSV}
-            className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all border border-transparent hover:border-slate-700"
-            title="연도별 내역 Excel/CSV 다운로드"
-          >
-            <Download className="w-4 h-4" />
-          </button>
-
-          <button
-            onClick={onResetDefaults}
-            className="p-2 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800 transition-all border border-transparent hover:border-slate-700"
-            title="기본 설정으로 초기화 (1억, 15년, 70:30)"
-          >
-            <RefreshCw className="w-4 h-4" />
-          </button>
-        </div>
+    <div className="p-4 border-b border-slate-800">
+      <h1 className="text-xl font-bold text-emerald-400 mb-4">연금 도우미</h1>
+      <div className="flex flex-col space-y-2">
+        <button onClick={onOpenGuide} className="px-3 py-2 text-sm bg-slate-800 hover:bg-slate-700 rounded text-slate-200 transition text-left">
+          가이드
+        </button>
+        <button onClick={onOpenTargetCalc} className="px-3 py-2 text-sm bg-slate-800 hover:bg-slate-700 rounded text-slate-200 transition text-left">
+          역산기
+        </button>
+        <button onClick={onResetDefaults} className="px-3 py-2 text-sm bg-slate-800 hover:bg-slate-700 rounded text-slate-200 transition text-left">
+          초기화
+        </button>
+        <button onClick={onExportCSV} className="px-3 py-2 text-sm bg-slate-800 hover:bg-slate-700 rounded text-slate-200 transition text-left">
+          CSV
+        </button>
       </div>
-    </header>
+    </div>
   );
-}
+};
+
+export default Header;

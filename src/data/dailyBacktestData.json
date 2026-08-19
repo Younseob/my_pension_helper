@@ -1,0 +1,2450 @@
+[
+  {
+    "date": "2026-08-19",
+    "sp500Index": 7716,
+    "nasdaqIndex": 29383,
+    "fearGreedIndex": 57
+  },
+  {
+    "date": "2026-08-18",
+    "sp500Index": 7692,
+    "nasdaqIndex": 29491,
+    "fearGreedIndex": 57
+  },
+  {
+    "date": "2026-08-17",
+    "sp500Index": 7745,
+    "nasdaqIndex": 29995,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2026-08-14",
+    "sp500Index": 7786,
+    "nasdaqIndex": 30046,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-08-13",
+    "sp500Index": 7799,
+    "nasdaqIndex": 30085,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-08-12",
+    "sp500Index": 7749,
+    "nasdaqIndex": 29743,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2026-08-11",
+    "sp500Index": 7728,
+    "nasdaqIndex": 29525,
+    "fearGreedIndex": 63
+  },
+  {
+    "date": "2026-08-10",
+    "sp500Index": 7753,
+    "nasdaqIndex": 29622,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2026-08-07",
+    "sp500Index": 7758,
+    "nasdaqIndex": 29722,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-08-06",
+    "sp500Index": 7710,
+    "nasdaqIndex": 29373,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-08-05",
+    "sp500Index": 7724,
+    "nasdaqIndex": 29488,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2026-08-04",
+    "sp500Index": 7737,
+    "nasdaqIndex": 29733,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2026-08-03",
+    "sp500Index": 7601,
+    "nasdaqIndex": 28777,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2026-07-31",
+    "sp500Index": 7490,
+    "nasdaqIndex": 28274,
+    "fearGreedIndex": 45
+  },
+  {
+    "date": "2026-07-30",
+    "sp500Index": 7438,
+    "nasdaqIndex": 28106,
+    "fearGreedIndex": 45
+  },
+  {
+    "date": "2026-07-29",
+    "sp500Index": 7316,
+    "nasdaqIndex": 27192,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-07-28",
+    "sp500Index": 7429,
+    "nasdaqIndex": 27763,
+    "fearGreedIndex": 35
+  },
+  {
+    "date": "2026-07-27",
+    "sp500Index": 7413,
+    "nasdaqIndex": 28039,
+    "fearGreedIndex": 38
+  },
+  {
+    "date": "2026-07-24",
+    "sp500Index": 7412,
+    "nasdaqIndex": 28128,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-07-23",
+    "sp500Index": 7408,
+    "nasdaqIndex": 28455,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-07-22",
+    "sp500Index": 7499,
+    "nasdaqIndex": 28998,
+    "fearGreedIndex": 39
+  },
+  {
+    "date": "2026-07-21",
+    "sp500Index": 7509,
+    "nasdaqIndex": 29155,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2026-07-20",
+    "sp500Index": 7443,
+    "nasdaqIndex": 28604,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2026-07-17",
+    "sp500Index": 7458,
+    "nasdaqIndex": 28593,
+    "fearGreedIndex": 37
+  },
+  {
+    "date": "2026-07-16",
+    "sp500Index": 7534,
+    "nasdaqIndex": 29026,
+    "fearGreedIndex": 37
+  },
+  {
+    "date": "2026-07-15",
+    "sp500Index": 7572,
+    "nasdaqIndex": 29503,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-07-14",
+    "sp500Index": 7544,
+    "nasdaqIndex": 29586,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-07-13",
+    "sp500Index": 7515,
+    "nasdaqIndex": 29264,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-07-10",
+    "sp500Index": 7575,
+    "nasdaqIndex": 29825,
+    "fearGreedIndex": 47
+  },
+  {
+    "date": "2026-07-09",
+    "sp500Index": 7544,
+    "nasdaqIndex": 29727,
+    "fearGreedIndex": 47
+  },
+  {
+    "date": "2026-07-08",
+    "sp500Index": 7483,
+    "nasdaqIndex": 29253,
+    "fearGreedIndex": 45
+  },
+  {
+    "date": "2026-07-07",
+    "sp500Index": 7504,
+    "nasdaqIndex": 29173,
+    "fearGreedIndex": 39
+  },
+  {
+    "date": "2026-07-06",
+    "sp500Index": 7537,
+    "nasdaqIndex": 29698,
+    "fearGreedIndex": 40
+  },
+  {
+    "date": "2026-07-02",
+    "sp500Index": 7483,
+    "nasdaqIndex": 29329,
+    "fearGreedIndex": 33
+  },
+  {
+    "date": "2026-07-01",
+    "sp500Index": 7483,
+    "nasdaqIndex": 29809,
+    "fearGreedIndex": 33
+  },
+  {
+    "date": "2026-06-30",
+    "sp500Index": 7499,
+    "nasdaqIndex": 30276,
+    "fearGreedIndex": 32
+  },
+  {
+    "date": "2026-06-29",
+    "sp500Index": 7440,
+    "nasdaqIndex": 29775,
+    "fearGreedIndex": 30
+  },
+  {
+    "date": "2026-06-26",
+    "sp500Index": 7354,
+    "nasdaqIndex": 29118,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2026-06-25",
+    "sp500Index": 7357,
+    "nasdaqIndex": 29440,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2026-06-24",
+    "sp500Index": 7358,
+    "nasdaqIndex": 29220,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2026-06-23",
+    "sp500Index": 7365,
+    "nasdaqIndex": 29347,
+    "fearGreedIndex": 26
+  },
+  {
+    "date": "2026-06-22",
+    "sp500Index": 7473,
+    "nasdaqIndex": 30347,
+    "fearGreedIndex": 28
+  },
+  {
+    "date": "2026-06-18",
+    "sp500Index": 7501,
+    "nasdaqIndex": 30406,
+    "fearGreedIndex": 37
+  },
+  {
+    "date": "2026-06-17",
+    "sp500Index": 7420,
+    "nasdaqIndex": 29671,
+    "fearGreedIndex": 37
+  },
+  {
+    "date": "2026-06-16",
+    "sp500Index": 7511,
+    "nasdaqIndex": 29968,
+    "fearGreedIndex": 33
+  },
+  {
+    "date": "2026-06-15",
+    "sp500Index": 7554,
+    "nasdaqIndex": 30544,
+    "fearGreedIndex": 40
+  },
+  {
+    "date": "2026-06-12",
+    "sp500Index": 7431,
+    "nasdaqIndex": 29636,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-06-11",
+    "sp500Index": 7394,
+    "nasdaqIndex": 29446,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-06-10",
+    "sp500Index": 7267,
+    "nasdaqIndex": 28508,
+    "fearGreedIndex": 30
+  },
+  {
+    "date": "2026-06-09",
+    "sp500Index": 7387,
+    "nasdaqIndex": 29085,
+    "fearGreedIndex": 27
+  },
+  {
+    "date": "2026-06-08",
+    "sp500Index": 7406,
+    "nasdaqIndex": 29414,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-06-05",
+    "sp500Index": 7384,
+    "nasdaqIndex": 28958,
+    "fearGreedIndex": 42
+  },
+  {
+    "date": "2026-06-04",
+    "sp500Index": 7584,
+    "nasdaqIndex": 30408,
+    "fearGreedIndex": 42
+  },
+  {
+    "date": "2026-06-03",
+    "sp500Index": 7554,
+    "nasdaqIndex": 30571,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2026-06-02",
+    "sp500Index": 7610,
+    "nasdaqIndex": 30661,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2026-06-01",
+    "sp500Index": 7600,
+    "nasdaqIndex": 30514,
+    "fearGreedIndex": 57
+  },
+  {
+    "date": "2026-05-29",
+    "sp500Index": 7580,
+    "nasdaqIndex": 30333,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2026-05-28",
+    "sp500Index": 7564,
+    "nasdaqIndex": 30224,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2026-05-27",
+    "sp500Index": 7520,
+    "nasdaqIndex": 29974,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2026-05-26",
+    "sp500Index": 7519,
+    "nasdaqIndex": 30001,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2026-05-22",
+    "sp500Index": 7473,
+    "nasdaqIndex": 29482,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2026-05-21",
+    "sp500Index": 7446,
+    "nasdaqIndex": 29357,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2026-05-20",
+    "sp500Index": 7433,
+    "nasdaqIndex": 29298,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2026-05-19",
+    "sp500Index": 7354,
+    "nasdaqIndex": 28819,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2026-05-18",
+    "sp500Index": 7403,
+    "nasdaqIndex": 28994,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2026-05-15",
+    "sp500Index": 7409,
+    "nasdaqIndex": 29125,
+    "fearGreedIndex": 63
+  },
+  {
+    "date": "2026-05-14",
+    "sp500Index": 7501,
+    "nasdaqIndex": 29580,
+    "fearGreedIndex": 63
+  },
+  {
+    "date": "2026-05-13",
+    "sp500Index": 7444,
+    "nasdaqIndex": 29367,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2026-05-12",
+    "sp500Index": 7401,
+    "nasdaqIndex": 29065,
+    "fearGreedIndex": 65
+  },
+  {
+    "date": "2026-05-11",
+    "sp500Index": 7413,
+    "nasdaqIndex": 29321,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2026-05-08",
+    "sp500Index": 7399,
+    "nasdaqIndex": 29235,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2026-05-07",
+    "sp500Index": 7337,
+    "nasdaqIndex": 28564,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2026-05-06",
+    "sp500Index": 7365,
+    "nasdaqIndex": 28599,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2026-05-05",
+    "sp500Index": 7259,
+    "nasdaqIndex": 28015,
+    "fearGreedIndex": 69
+  },
+  {
+    "date": "2026-05-04",
+    "sp500Index": 7201,
+    "nasdaqIndex": 27652,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2026-05-01",
+    "sp500Index": 7230,
+    "nasdaqIndex": 27710,
+    "fearGreedIndex": 71
+  },
+  {
+    "date": "2026-04-30",
+    "sp500Index": 7209,
+    "nasdaqIndex": 27452,
+    "fearGreedIndex": 71
+  },
+  {
+    "date": "2026-04-29",
+    "sp500Index": 7136,
+    "nasdaqIndex": 27187,
+    "fearGreedIndex": 70
+  },
+  {
+    "date": "2026-04-28",
+    "sp500Index": 7139,
+    "nasdaqIndex": 27029,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2026-04-27",
+    "sp500Index": 7174,
+    "nasdaqIndex": 27306,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2026-04-24",
+    "sp500Index": 7165,
+    "nasdaqIndex": 27304,
+    "fearGreedIndex": 65
+  },
+  {
+    "date": "2026-04-23",
+    "sp500Index": 7108,
+    "nasdaqIndex": 26783,
+    "fearGreedIndex": 65
+  },
+  {
+    "date": "2026-04-22",
+    "sp500Index": 7138,
+    "nasdaqIndex": 26937,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2026-04-21",
+    "sp500Index": 7064,
+    "nasdaqIndex": 26479,
+    "fearGreedIndex": 68
+  },
+  {
+    "date": "2026-04-20",
+    "sp500Index": 7109,
+    "nasdaqIndex": 26590,
+    "fearGreedIndex": 68
+  },
+  {
+    "date": "2026-04-17",
+    "sp500Index": 7126,
+    "nasdaqIndex": 26672,
+    "fearGreedIndex": 69
+  },
+  {
+    "date": "2026-04-16",
+    "sp500Index": 7041,
+    "nasdaqIndex": 26333,
+    "fearGreedIndex": 69
+  },
+  {
+    "date": "2026-04-15",
+    "sp500Index": 7023,
+    "nasdaqIndex": 26205,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2026-04-14",
+    "sp500Index": 6967,
+    "nasdaqIndex": 25842,
+    "fearGreedIndex": 56
+  },
+  {
+    "date": "2026-04-13",
+    "sp500Index": 6886,
+    "nasdaqIndex": 25384,
+    "fearGreedIndex": 47
+  },
+  {
+    "date": "2026-04-10",
+    "sp500Index": 6817,
+    "nasdaqIndex": 25116,
+    "fearGreedIndex": 38
+  },
+  {
+    "date": "2026-04-09",
+    "sp500Index": 6825,
+    "nasdaqIndex": 25082,
+    "fearGreedIndex": 38
+  },
+  {
+    "date": "2026-04-08",
+    "sp500Index": 6783,
+    "nasdaqIndex": 24903,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-04-07",
+    "sp500Index": 6617,
+    "nasdaqIndex": 24202,
+    "fearGreedIndex": 29
+  },
+  {
+    "date": "2026-04-06",
+    "sp500Index": 6612,
+    "nasdaqIndex": 24192,
+    "fearGreedIndex": 22
+  },
+  {
+    "date": "2026-04-02",
+    "sp500Index": 6583,
+    "nasdaqIndex": 24046,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2026-04-01",
+    "sp500Index": 6575,
+    "nasdaqIndex": 24020,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2026-03-31",
+    "sp500Index": 6529,
+    "nasdaqIndex": 23740,
+    "fearGreedIndex": 16
+  },
+  {
+    "date": "2026-03-30",
+    "sp500Index": 6344,
+    "nasdaqIndex": 22953,
+    "fearGreedIndex": 15
+  },
+  {
+    "date": "2026-03-27",
+    "sp500Index": 6369,
+    "nasdaqIndex": 23133,
+    "fearGreedIndex": 8
+  },
+  {
+    "date": "2026-03-26",
+    "sp500Index": 6477,
+    "nasdaqIndex": 23587,
+    "fearGreedIndex": 8
+  },
+  {
+    "date": "2026-03-25",
+    "sp500Index": 6592,
+    "nasdaqIndex": 24163,
+    "fearGreedIndex": 10
+  },
+  {
+    "date": "2026-03-24",
+    "sp500Index": 6556,
+    "nasdaqIndex": 24002,
+    "fearGreedIndex": 17
+  },
+  {
+    "date": "2026-03-23",
+    "sp500Index": 6581,
+    "nasdaqIndex": 24189,
+    "fearGreedIndex": 10
+  },
+  {
+    "date": "2026-03-20",
+    "sp500Index": 6506,
+    "nasdaqIndex": 23898,
+    "fearGreedIndex": 8
+  },
+  {
+    "date": "2026-03-19",
+    "sp500Index": 6606,
+    "nasdaqIndex": 24355,
+    "fearGreedIndex": 8
+  },
+  {
+    "date": "2026-03-18",
+    "sp500Index": 6625,
+    "nasdaqIndex": 24425,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2026-03-17",
+    "sp500Index": 6716,
+    "nasdaqIndex": 24780,
+    "fearGreedIndex": 14
+  },
+  {
+    "date": "2026-03-16",
+    "sp500Index": 6699,
+    "nasdaqIndex": 24655,
+    "fearGreedIndex": 23
+  },
+  {
+    "date": "2026-03-13",
+    "sp500Index": 6632,
+    "nasdaqIndex": 24381,
+    "fearGreedIndex": 17
+  },
+  {
+    "date": "2026-03-12",
+    "sp500Index": 6673,
+    "nasdaqIndex": 24534,
+    "fearGreedIndex": 17
+  },
+  {
+    "date": "2026-03-11",
+    "sp500Index": 6776,
+    "nasdaqIndex": 24965,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2026-03-10",
+    "sp500Index": 6781,
+    "nasdaqIndex": 24956,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2026-03-09",
+    "sp500Index": 6796,
+    "nasdaqIndex": 24967,
+    "fearGreedIndex": 20
+  },
+  {
+    "date": "2026-03-06",
+    "sp500Index": 6740,
+    "nasdaqIndex": 24643,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2026-03-05",
+    "sp500Index": 6831,
+    "nasdaqIndex": 25020,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2026-03-04",
+    "sp500Index": 6870,
+    "nasdaqIndex": 25094,
+    "fearGreedIndex": 32
+  },
+  {
+    "date": "2026-03-03",
+    "sp500Index": 6817,
+    "nasdaqIndex": 24720,
+    "fearGreedIndex": 33
+  },
+  {
+    "date": "2026-03-02",
+    "sp500Index": 6882,
+    "nasdaqIndex": 24993,
+    "fearGreedIndex": 32
+  },
+  {
+    "date": "2026-02-27",
+    "sp500Index": 6879,
+    "nasdaqIndex": 24960,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-02-26",
+    "sp500Index": 6909,
+    "nasdaqIndex": 25034,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2026-02-25",
+    "sp500Index": 6946,
+    "nasdaqIndex": 25329,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2026-02-24",
+    "sp500Index": 6890,
+    "nasdaqIndex": 24977,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2026-02-23",
+    "sp500Index": 6838,
+    "nasdaqIndex": 24709,
+    "fearGreedIndex": 40
+  },
+  {
+    "date": "2026-02-20",
+    "sp500Index": 6910,
+    "nasdaqIndex": 25013,
+    "fearGreedIndex": 42
+  },
+  {
+    "date": "2026-02-19",
+    "sp500Index": 6862,
+    "nasdaqIndex": 24797,
+    "fearGreedIndex": 42
+  },
+  {
+    "date": "2026-02-18",
+    "sp500Index": 6881,
+    "nasdaqIndex": 24899,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-02-17",
+    "sp500Index": 6843,
+    "nasdaqIndex": 24702,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-02-13",
+    "sp500Index": 6836,
+    "nasdaqIndex": 24733,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-02-12",
+    "sp500Index": 6833,
+    "nasdaqIndex": 24688,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2026-02-11",
+    "sp500Index": 6941,
+    "nasdaqIndex": 25201,
+    "fearGreedIndex": 36
+  },
+  {
+    "date": "2026-02-10",
+    "sp500Index": 6942,
+    "nasdaqIndex": 25128,
+    "fearGreedIndex": 50
+  },
+  {
+    "date": "2026-02-09",
+    "sp500Index": 6965,
+    "nasdaqIndex": 25268,
+    "fearGreedIndex": 47
+  },
+  {
+    "date": "2026-02-06",
+    "sp500Index": 6932,
+    "nasdaqIndex": 25076,
+    "fearGreedIndex": 45
+  },
+  {
+    "date": "2026-02-05",
+    "sp500Index": 6798,
+    "nasdaqIndex": 24549,
+    "fearGreedIndex": 45
+  },
+  {
+    "date": "2026-02-04",
+    "sp500Index": 6883,
+    "nasdaqIndex": 24891,
+    "fearGreedIndex": 35
+  },
+  {
+    "date": "2026-02-03",
+    "sp500Index": 6918,
+    "nasdaqIndex": 25339,
+    "fearGreedIndex": 47
+  },
+  {
+    "date": "2026-02-02",
+    "sp500Index": 6976,
+    "nasdaqIndex": 25739,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2026-01-30",
+    "sp500Index": 6939,
+    "nasdaqIndex": 25552,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2026-01-29",
+    "sp500Index": 6969,
+    "nasdaqIndex": 25884,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2026-01-28",
+    "sp500Index": 6978,
+    "nasdaqIndex": 26023,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-01-27",
+    "sp500Index": 6979,
+    "nasdaqIndex": 25940,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2026-01-26",
+    "sp500Index": 6950,
+    "nasdaqIndex": 25713,
+    "fearGreedIndex": 65
+  },
+  {
+    "date": "2026-01-23",
+    "sp500Index": 6916,
+    "nasdaqIndex": 25605,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2026-01-22",
+    "sp500Index": 6913,
+    "nasdaqIndex": 25518,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2026-01-21",
+    "sp500Index": 6876,
+    "nasdaqIndex": 25327,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2026-01-20",
+    "sp500Index": 6797,
+    "nasdaqIndex": 24988,
+    "fearGreedIndex": 54
+  },
+  {
+    "date": "2026-01-16",
+    "sp500Index": 6940,
+    "nasdaqIndex": 25529,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-01-15",
+    "sp500Index": 6944,
+    "nasdaqIndex": 25547,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-01-14",
+    "sp500Index": 6927,
+    "nasdaqIndex": 25466,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2026-01-13",
+    "sp500Index": 6964,
+    "nasdaqIndex": 25742,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2026-01-12",
+    "sp500Index": 6977,
+    "nasdaqIndex": 25788,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2026-01-09",
+    "sp500Index": 6966,
+    "nasdaqIndex": 25766,
+    "fearGreedIndex": 54
+  },
+  {
+    "date": "2026-01-08",
+    "sp500Index": 6921,
+    "nasdaqIndex": 25507,
+    "fearGreedIndex": 54
+  },
+  {
+    "date": "2026-01-07",
+    "sp500Index": 6921,
+    "nasdaqIndex": 25654,
+    "fearGreedIndex": 48
+  },
+  {
+    "date": "2026-01-06",
+    "sp500Index": 6945,
+    "nasdaqIndex": 25640,
+    "fearGreedIndex": 49
+  },
+  {
+    "date": "2026-01-05",
+    "sp500Index": 6902,
+    "nasdaqIndex": 25401,
+    "fearGreedIndex": 53
+  },
+  {
+    "date": "2026-01-02",
+    "sp500Index": 6858,
+    "nasdaqIndex": 25206,
+    "fearGreedIndex": 45
+  },
+  {
+    "date": "2025-12-31",
+    "sp500Index": 6846,
+    "nasdaqIndex": 25250,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2025-12-30",
+    "sp500Index": 6896,
+    "nasdaqIndex": 25463,
+    "fearGreedIndex": 43
+  },
+  {
+    "date": "2025-12-29",
+    "sp500Index": 6906,
+    "nasdaqIndex": 25526,
+    "fearGreedIndex": 46
+  },
+  {
+    "date": "2025-12-26",
+    "sp500Index": 6930,
+    "nasdaqIndex": 25644,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2025-12-24",
+    "sp500Index": 6932,
+    "nasdaqIndex": 25656,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2025-12-23",
+    "sp500Index": 6910,
+    "nasdaqIndex": 25588,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2025-12-22",
+    "sp500Index": 6878,
+    "nasdaqIndex": 25462,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2025-12-19",
+    "sp500Index": 6835,
+    "nasdaqIndex": 25346,
+    "fearGreedIndex": 44
+  },
+  {
+    "date": "2025-12-18",
+    "sp500Index": 6775,
+    "nasdaqIndex": 25019,
+    "fearGreedIndex": 44
+  },
+  {
+    "date": "2025-12-17",
+    "sp500Index": 6721,
+    "nasdaqIndex": 24648,
+    "fearGreedIndex": 42
+  },
+  {
+    "date": "2025-12-16",
+    "sp500Index": 6800,
+    "nasdaqIndex": 25133,
+    "fearGreedIndex": 38
+  },
+  {
+    "date": "2025-12-15",
+    "sp500Index": 6817,
+    "nasdaqIndex": 25067,
+    "fearGreedIndex": 46
+  },
+  {
+    "date": "2025-12-12",
+    "sp500Index": 6827,
+    "nasdaqIndex": 25197,
+    "fearGreedIndex": 39
+  },
+  {
+    "date": "2025-12-11",
+    "sp500Index": 6901,
+    "nasdaqIndex": 25687,
+    "fearGreedIndex": 39
+  },
+  {
+    "date": "2025-12-10",
+    "sp500Index": 6887,
+    "nasdaqIndex": 25776,
+    "fearGreedIndex": 44
+  },
+  {
+    "date": "2025-12-09",
+    "sp500Index": 6841,
+    "nasdaqIndex": 25669,
+    "fearGreedIndex": 36
+  },
+  {
+    "date": "2025-12-08",
+    "sp500Index": 6847,
+    "nasdaqIndex": 25628,
+    "fearGreedIndex": 41
+  },
+  {
+    "date": "2025-12-05",
+    "sp500Index": 6870,
+    "nasdaqIndex": 25692,
+    "fearGreedIndex": 38
+  },
+  {
+    "date": "2025-12-04",
+    "sp500Index": 6857,
+    "nasdaqIndex": 25582,
+    "fearGreedIndex": 38
+  },
+  {
+    "date": "2025-12-03",
+    "sp500Index": 6850,
+    "nasdaqIndex": 25607,
+    "fearGreedIndex": 36
+  },
+  {
+    "date": "2025-12-02",
+    "sp500Index": 6829,
+    "nasdaqIndex": 25556,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2025-12-01",
+    "sp500Index": 6813,
+    "nasdaqIndex": 25343,
+    "fearGreedIndex": 23
+  },
+  {
+    "date": "2025-11-28",
+    "sp500Index": 6849,
+    "nasdaqIndex": 25435,
+    "fearGreedIndex": 22
+  },
+  {
+    "date": "2025-11-26",
+    "sp500Index": 6813,
+    "nasdaqIndex": 25237,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2025-11-25",
+    "sp500Index": 6766,
+    "nasdaqIndex": 25018,
+    "fearGreedIndex": 18
+  },
+  {
+    "date": "2025-11-24",
+    "sp500Index": 6705,
+    "nasdaqIndex": 24874,
+    "fearGreedIndex": 15
+  },
+  {
+    "date": "2025-11-21",
+    "sp500Index": 6603,
+    "nasdaqIndex": 24240,
+    "fearGreedIndex": 6
+  },
+  {
+    "date": "2025-11-20",
+    "sp500Index": 6539,
+    "nasdaqIndex": 24054,
+    "fearGreedIndex": 6
+  },
+  {
+    "date": "2025-11-19",
+    "sp500Index": 6642,
+    "nasdaqIndex": 24641,
+    "fearGreedIndex": 5
+  },
+  {
+    "date": "2025-11-18",
+    "sp500Index": 6617,
+    "nasdaqIndex": 24503,
+    "fearGreedIndex": 8
+  },
+  {
+    "date": "2025-11-17",
+    "sp500Index": 6672,
+    "nasdaqIndex": 24800,
+    "fearGreedIndex": 9
+  },
+  {
+    "date": "2025-11-14",
+    "sp500Index": 6734,
+    "nasdaqIndex": 25008,
+    "fearGreedIndex": 22
+  },
+  {
+    "date": "2025-11-13",
+    "sp500Index": 6737,
+    "nasdaqIndex": 24993,
+    "fearGreedIndex": 22
+  },
+  {
+    "date": "2025-11-12",
+    "sp500Index": 6851,
+    "nasdaqIndex": 25517,
+    "fearGreedIndex": 25
+  },
+  {
+    "date": "2025-11-11",
+    "sp500Index": 6847,
+    "nasdaqIndex": 25533,
+    "fearGreedIndex": 35
+  },
+  {
+    "date": "2025-11-10",
+    "sp500Index": 6832,
+    "nasdaqIndex": 25612,
+    "fearGreedIndex": 30
+  },
+  {
+    "date": "2025-11-07",
+    "sp500Index": 6729,
+    "nasdaqIndex": 25060,
+    "fearGreedIndex": 20
+  },
+  {
+    "date": "2025-11-06",
+    "sp500Index": 6720,
+    "nasdaqIndex": 25130,
+    "fearGreedIndex": 20
+  },
+  {
+    "date": "2025-11-05",
+    "sp500Index": 6796,
+    "nasdaqIndex": 25620,
+    "fearGreedIndex": 24
+  },
+  {
+    "date": "2025-11-04",
+    "sp500Index": 6772,
+    "nasdaqIndex": 25436,
+    "fearGreedIndex": 23
+  },
+  {
+    "date": "2025-11-03",
+    "sp500Index": 6852,
+    "nasdaqIndex": 25973,
+    "fearGreedIndex": 21
+  },
+  {
+    "date": "2025-10-31",
+    "sp500Index": 6840,
+    "nasdaqIndex": 25858,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2025-10-30",
+    "sp500Index": 6822,
+    "nasdaqIndex": 25735,
+    "fearGreedIndex": 34
+  },
+  {
+    "date": "2025-10-29",
+    "sp500Index": 6891,
+    "nasdaqIndex": 26120,
+    "fearGreedIndex": 37
+  },
+  {
+    "date": "2025-10-28",
+    "sp500Index": 6891,
+    "nasdaqIndex": 26012,
+    "fearGreedIndex": 42
+  },
+  {
+    "date": "2025-10-27",
+    "sp500Index": 6875,
+    "nasdaqIndex": 25822,
+    "fearGreedIndex": 39
+  },
+  {
+    "date": "2025-10-24",
+    "sp500Index": 6792,
+    "nasdaqIndex": 25358,
+    "fearGreedIndex": 32
+  },
+  {
+    "date": "2025-10-23",
+    "sp500Index": 6738,
+    "nasdaqIndex": 25097,
+    "fearGreedIndex": 32
+  },
+  {
+    "date": "2025-10-22",
+    "sp500Index": 6699,
+    "nasdaqIndex": 24879,
+    "fearGreedIndex": 28
+  },
+  {
+    "date": "2025-10-21",
+    "sp500Index": 6735,
+    "nasdaqIndex": 25127,
+    "fearGreedIndex": 26
+  },
+  {
+    "date": "2025-10-20",
+    "sp500Index": 6735,
+    "nasdaqIndex": 25141,
+    "fearGreedIndex": 29
+  },
+  {
+    "date": "2025-10-17",
+    "sp500Index": 6664,
+    "nasdaqIndex": 24818,
+    "fearGreedIndex": 22
+  },
+  {
+    "date": "2025-10-16",
+    "sp500Index": 6629,
+    "nasdaqIndex": 24657,
+    "fearGreedIndex": 22
+  },
+  {
+    "date": "2025-10-15",
+    "sp500Index": 6671,
+    "nasdaqIndex": 24745,
+    "fearGreedIndex": 23
+  },
+  {
+    "date": "2025-10-14",
+    "sp500Index": 6644,
+    "nasdaqIndex": 24579,
+    "fearGreedIndex": 27
+  },
+  {
+    "date": "2025-10-13",
+    "sp500Index": 6655,
+    "nasdaqIndex": 24750,
+    "fearGreedIndex": 28
+  },
+  {
+    "date": "2025-10-10",
+    "sp500Index": 6553,
+    "nasdaqIndex": 24222,
+    "fearGreedIndex": 30
+  },
+  {
+    "date": "2025-10-09",
+    "sp500Index": 6735,
+    "nasdaqIndex": 25098,
+    "fearGreedIndex": 30
+  },
+  {
+    "date": "2025-10-08",
+    "sp500Index": 6754,
+    "nasdaqIndex": 25137,
+    "fearGreedIndex": 49
+  },
+  {
+    "date": "2025-10-07",
+    "sp500Index": 6715,
+    "nasdaqIndex": 24840,
+    "fearGreedIndex": 53
+  },
+  {
+    "date": "2025-10-06",
+    "sp500Index": 6740,
+    "nasdaqIndex": 24979,
+    "fearGreedIndex": 52
+  },
+  {
+    "date": "2025-10-03",
+    "sp500Index": 6716,
+    "nasdaqIndex": 24786,
+    "fearGreedIndex": 53
+  },
+  {
+    "date": "2025-10-02",
+    "sp500Index": 6715,
+    "nasdaqIndex": 24893,
+    "fearGreedIndex": 53
+  },
+  {
+    "date": "2025-10-01",
+    "sp500Index": 6711,
+    "nasdaqIndex": 24801,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2025-09-30",
+    "sp500Index": 6688,
+    "nasdaqIndex": 24680,
+    "fearGreedIndex": 52
+  },
+  {
+    "date": "2025-09-29",
+    "sp500Index": 6661,
+    "nasdaqIndex": 24611,
+    "fearGreedIndex": 51
+  },
+  {
+    "date": "2025-09-26",
+    "sp500Index": 6644,
+    "nasdaqIndex": 24504,
+    "fearGreedIndex": 51
+  },
+  {
+    "date": "2025-09-25",
+    "sp500Index": 6605,
+    "nasdaqIndex": 24397,
+    "fearGreedIndex": 51
+  },
+  {
+    "date": "2025-09-24",
+    "sp500Index": 6638,
+    "nasdaqIndex": 24504,
+    "fearGreedIndex": 51
+  },
+  {
+    "date": "2025-09-23",
+    "sp500Index": 6657,
+    "nasdaqIndex": 24580,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2025-09-22",
+    "sp500Index": 6694,
+    "nasdaqIndex": 24761,
+    "fearGreedIndex": 57
+  },
+  {
+    "date": "2025-09-19",
+    "sp500Index": 6664,
+    "nasdaqIndex": 24626,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2025-09-18",
+    "sp500Index": 6632,
+    "nasdaqIndex": 24455,
+    "fearGreedIndex": 66
+  },
+  {
+    "date": "2025-09-17",
+    "sp500Index": 6600,
+    "nasdaqIndex": 24224,
+    "fearGreedIndex": 67
+  },
+  {
+    "date": "2025-09-16",
+    "sp500Index": 6607,
+    "nasdaqIndex": 24274,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2025-09-15",
+    "sp500Index": 6615,
+    "nasdaqIndex": 24294,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2025-09-12",
+    "sp500Index": 6584,
+    "nasdaqIndex": 24092,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2025-09-11",
+    "sp500Index": 6587,
+    "nasdaqIndex": 23993,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2025-09-10",
+    "sp500Index": 6532,
+    "nasdaqIndex": 23849,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-09-09",
+    "sp500Index": 6513,
+    "nasdaqIndex": 23840,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2025-09-08",
+    "sp500Index": 6495,
+    "nasdaqIndex": 23762,
+    "fearGreedIndex": 58
+  },
+  {
+    "date": "2025-09-05",
+    "sp500Index": 6482,
+    "nasdaqIndex": 23652,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2025-09-04",
+    "sp500Index": 6502,
+    "nasdaqIndex": 23633,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2025-09-03",
+    "sp500Index": 6448,
+    "nasdaqIndex": 23415,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2025-09-02",
+    "sp500Index": 6416,
+    "nasdaqIndex": 23231,
+    "fearGreedIndex": 61
+  },
+  {
+    "date": "2025-08-29",
+    "sp500Index": 6460,
+    "nasdaqIndex": 23415,
+    "fearGreedIndex": 62
+  },
+  {
+    "date": "2025-08-28",
+    "sp500Index": 6502,
+    "nasdaqIndex": 23703,
+    "fearGreedIndex": 62
+  },
+  {
+    "date": "2025-08-27",
+    "sp500Index": 6481,
+    "nasdaqIndex": 23566,
+    "fearGreedIndex": 64
+  },
+  {
+    "date": "2025-08-26",
+    "sp500Index": 6466,
+    "nasdaqIndex": 23525,
+    "fearGreedIndex": 59
+  },
+  {
+    "date": "2025-08-25",
+    "sp500Index": 6439,
+    "nasdaqIndex": 23426,
+    "fearGreedIndex": 55
+  },
+  {
+    "date": "2025-08-22",
+    "sp500Index": 6467,
+    "nasdaqIndex": 23498,
+    "fearGreedIndex": 56
+  },
+  {
+    "date": "2025-08-21",
+    "sp500Index": 6370,
+    "nasdaqIndex": 23143,
+    "fearGreedIndex": 56
+  },
+  {
+    "date": "2025-08-20",
+    "sp500Index": 6396,
+    "nasdaqIndex": 23250,
+    "fearGreedIndex": 53
+  },
+  {
+    "date": "2025-08-19",
+    "sp500Index": 6411,
+    "nasdaqIndex": 23385,
+    "fearGreedIndex": 56
+  },
+  {
+    "date": "2025-08-18",
+    "sp500Index": 6449,
+    "nasdaqIndex": 23714,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-15",
+    "sp500Index": 6450,
+    "nasdaqIndex": 23712,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-14",
+    "sp500Index": 6469,
+    "nasdaqIndex": 23832,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-13",
+    "sp500Index": 6467,
+    "nasdaqIndex": 23849,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-12",
+    "sp500Index": 6446,
+    "nasdaqIndex": 23839,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-11",
+    "sp500Index": 6373,
+    "nasdaqIndex": 23527,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-08",
+    "sp500Index": 6389,
+    "nasdaqIndex": 23611,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-07",
+    "sp500Index": 6340,
+    "nasdaqIndex": 23390,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-06",
+    "sp500Index": 6345,
+    "nasdaqIndex": 23315,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-05",
+    "sp500Index": 6299,
+    "nasdaqIndex": 23019,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-04",
+    "sp500Index": 6330,
+    "nasdaqIndex": 23189,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-08-01",
+    "sp500Index": 6238,
+    "nasdaqIndex": 22763,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-31",
+    "sp500Index": 6339,
+    "nasdaqIndex": 23218,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-30",
+    "sp500Index": 6363,
+    "nasdaqIndex": 23345,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-29",
+    "sp500Index": 6371,
+    "nasdaqIndex": 23308,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-28",
+    "sp500Index": 6390,
+    "nasdaqIndex": 23356,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-25",
+    "sp500Index": 6389,
+    "nasdaqIndex": 23272,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-24",
+    "sp500Index": 6363,
+    "nasdaqIndex": 23220,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-23",
+    "sp500Index": 6359,
+    "nasdaqIndex": 23162,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-22",
+    "sp500Index": 6310,
+    "nasdaqIndex": 23064,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-21",
+    "sp500Index": 6306,
+    "nasdaqIndex": 23180,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-18",
+    "sp500Index": 6297,
+    "nasdaqIndex": 23065,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-17",
+    "sp500Index": 6297,
+    "nasdaqIndex": 23081,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-16",
+    "sp500Index": 6264,
+    "nasdaqIndex": 22908,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-15",
+    "sp500Index": 6244,
+    "nasdaqIndex": 22885,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-14",
+    "sp500Index": 6269,
+    "nasdaqIndex": 22856,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-11",
+    "sp500Index": 6260,
+    "nasdaqIndex": 22781,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-10",
+    "sp500Index": 6280,
+    "nasdaqIndex": 22829,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-09",
+    "sp500Index": 6263,
+    "nasdaqIndex": 22865,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-08",
+    "sp500Index": 6226,
+    "nasdaqIndex": 22702,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-07",
+    "sp500Index": 6230,
+    "nasdaqIndex": 22686,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-03",
+    "sp500Index": 6279,
+    "nasdaqIndex": 22867,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-02",
+    "sp500Index": 6227,
+    "nasdaqIndex": 22642,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-07-01",
+    "sp500Index": 6198,
+    "nasdaqIndex": 22478,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-30",
+    "sp500Index": 6205,
+    "nasdaqIndex": 22679,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-27",
+    "sp500Index": 6173,
+    "nasdaqIndex": 22534,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-26",
+    "sp500Index": 6141,
+    "nasdaqIndex": 22447,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-25",
+    "sp500Index": 6092,
+    "nasdaqIndex": 22238,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-24",
+    "sp500Index": 6092,
+    "nasdaqIndex": 22191,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-23",
+    "sp500Index": 6025,
+    "nasdaqIndex": 21856,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-20",
+    "sp500Index": 5968,
+    "nasdaqIndex": 21626,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-18",
+    "sp500Index": 5981,
+    "nasdaqIndex": 21720,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-17",
+    "sp500Index": 5983,
+    "nasdaqIndex": 21719,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-16",
+    "sp500Index": 6033,
+    "nasdaqIndex": 21938,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-13",
+    "sp500Index": 5977,
+    "nasdaqIndex": 21631,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-12",
+    "sp500Index": 6045,
+    "nasdaqIndex": 21913,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-11",
+    "sp500Index": 6022,
+    "nasdaqIndex": 21861,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-10",
+    "sp500Index": 6039,
+    "nasdaqIndex": 21942,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-09",
+    "sp500Index": 6006,
+    "nasdaqIndex": 21798,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-06",
+    "sp500Index": 6000,
+    "nasdaqIndex": 21762,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-05",
+    "sp500Index": 5939,
+    "nasdaqIndex": 21547,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-04",
+    "sp500Index": 5971,
+    "nasdaqIndex": 21722,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-03",
+    "sp500Index": 5970,
+    "nasdaqIndex": 21663,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-06-02",
+    "sp500Index": 5936,
+    "nasdaqIndex": 21492,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-30",
+    "sp500Index": 5912,
+    "nasdaqIndex": 21341,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-29",
+    "sp500Index": 5912,
+    "nasdaqIndex": 21364,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-28",
+    "sp500Index": 5889,
+    "nasdaqIndex": 21318,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-27",
+    "sp500Index": 5922,
+    "nasdaqIndex": 21415,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-23",
+    "sp500Index": 5803,
+    "nasdaqIndex": 20916,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-22",
+    "sp500Index": 5842,
+    "nasdaqIndex": 21112,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-21",
+    "sp500Index": 5845,
+    "nasdaqIndex": 21080,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-20",
+    "sp500Index": 5940,
+    "nasdaqIndex": 21367,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-19",
+    "sp500Index": 5964,
+    "nasdaqIndex": 21447,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-16",
+    "sp500Index": 5958,
+    "nasdaqIndex": 21428,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-15",
+    "sp500Index": 5917,
+    "nasdaqIndex": 21336,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-14",
+    "sp500Index": 5893,
+    "nasdaqIndex": 21319,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-13",
+    "sp500Index": 5887,
+    "nasdaqIndex": 21198,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-12",
+    "sp500Index": 5844,
+    "nasdaqIndex": 20868,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-09",
+    "sp500Index": 5660,
+    "nasdaqIndex": 20061,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-08",
+    "sp500Index": 5664,
+    "nasdaqIndex": 20064,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-07",
+    "sp500Index": 5631,
+    "nasdaqIndex": 19868,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-06",
+    "sp500Index": 5607,
+    "nasdaqIndex": 19791,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-05",
+    "sp500Index": 5650,
+    "nasdaqIndex": 19968,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-02",
+    "sp500Index": 5687,
+    "nasdaqIndex": 20103,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-05-01",
+    "sp500Index": 5604,
+    "nasdaqIndex": 19787,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-30",
+    "sp500Index": 5569,
+    "nasdaqIndex": 19571,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-29",
+    "sp500Index": 5561,
+    "nasdaqIndex": 19545,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-28",
+    "sp500Index": 5529,
+    "nasdaqIndex": 19427,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-25",
+    "sp500Index": 5525,
+    "nasdaqIndex": 19433,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-24",
+    "sp500Index": 5485,
+    "nasdaqIndex": 19214,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-23",
+    "sp500Index": 5376,
+    "nasdaqIndex": 18693,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-22",
+    "sp500Index": 5288,
+    "nasdaqIndex": 18276,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-21",
+    "sp500Index": 5158,
+    "nasdaqIndex": 17808,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-17",
+    "sp500Index": 5283,
+    "nasdaqIndex": 18258,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-16",
+    "sp500Index": 5276,
+    "nasdaqIndex": 18258,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-15",
+    "sp500Index": 5397,
+    "nasdaqIndex": 18830,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-14",
+    "sp500Index": 5406,
+    "nasdaqIndex": 18796,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-11",
+    "sp500Index": 5363,
+    "nasdaqIndex": 18690,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-10",
+    "sp500Index": 5268,
+    "nasdaqIndex": 18344,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-09",
+    "sp500Index": 5457,
+    "nasdaqIndex": 19145,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-08",
+    "sp500Index": 4983,
+    "nasdaqIndex": 17090,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-07",
+    "sp500Index": 5062,
+    "nasdaqIndex": 17431,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-04",
+    "sp500Index": 5074,
+    "nasdaqIndex": 17398,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-03",
+    "sp500Index": 5397,
+    "nasdaqIndex": 18521,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-02",
+    "sp500Index": 5671,
+    "nasdaqIndex": 19582,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-04-01",
+    "sp500Index": 5633,
+    "nasdaqIndex": 19436,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-31",
+    "sp500Index": 5612,
+    "nasdaqIndex": 19278,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-28",
+    "sp500Index": 5581,
+    "nasdaqIndex": 19281,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-27",
+    "sp500Index": 5693,
+    "nasdaqIndex": 19799,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-26",
+    "sp500Index": 5712,
+    "nasdaqIndex": 19917,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-25",
+    "sp500Index": 5777,
+    "nasdaqIndex": 20288,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-24",
+    "sp500Index": 5768,
+    "nasdaqIndex": 20180,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-21",
+    "sp500Index": 5668,
+    "nasdaqIndex": 19754,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-20",
+    "sp500Index": 5663,
+    "nasdaqIndex": 19678,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-19",
+    "sp500Index": 5675,
+    "nasdaqIndex": 19737,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-18",
+    "sp500Index": 5615,
+    "nasdaqIndex": 19483,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-17",
+    "sp500Index": 5675,
+    "nasdaqIndex": 19812,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-14",
+    "sp500Index": 5639,
+    "nasdaqIndex": 19705,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-13",
+    "sp500Index": 5522,
+    "nasdaqIndex": 19225,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-12",
+    "sp500Index": 5599,
+    "nasdaqIndex": 19596,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-11",
+    "sp500Index": 5572,
+    "nasdaqIndex": 19377,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-10",
+    "sp500Index": 5615,
+    "nasdaqIndex": 19431,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-07",
+    "sp500Index": 5770,
+    "nasdaqIndex": 20201,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-06",
+    "sp500Index": 5739,
+    "nasdaqIndex": 20053,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-05",
+    "sp500Index": 5843,
+    "nasdaqIndex": 20628,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-04",
+    "sp500Index": 5778,
+    "nasdaqIndex": 20353,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-03-03",
+    "sp500Index": 5850,
+    "nasdaqIndex": 20426,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-28",
+    "sp500Index": 5955,
+    "nasdaqIndex": 20884,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-27",
+    "sp500Index": 5862,
+    "nasdaqIndex": 20551,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-26",
+    "sp500Index": 5956,
+    "nasdaqIndex": 21133,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-25",
+    "sp500Index": 5955,
+    "nasdaqIndex": 21087,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-24",
+    "sp500Index": 5983,
+    "nasdaqIndex": 21352,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-21",
+    "sp500Index": 6013,
+    "nasdaqIndex": 21614,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-20",
+    "sp500Index": 6118,
+    "nasdaqIndex": 22068,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-19",
+    "sp500Index": 6144,
+    "nasdaqIndex": 22176,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-18",
+    "sp500Index": 6130,
+    "nasdaqIndex": 22165,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-14",
+    "sp500Index": 6115,
+    "nasdaqIndex": 22115,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-13",
+    "sp500Index": 6115,
+    "nasdaqIndex": 22031,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-12",
+    "sp500Index": 6052,
+    "nasdaqIndex": 21719,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-11",
+    "sp500Index": 6069,
+    "nasdaqIndex": 21694,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-10",
+    "sp500Index": 6066,
+    "nasdaqIndex": 21757,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-07",
+    "sp500Index": 6026,
+    "nasdaqIndex": 21491,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-06",
+    "sp500Index": 6084,
+    "nasdaqIndex": 21774,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-05",
+    "sp500Index": 6061,
+    "nasdaqIndex": 21658,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-04",
+    "sp500Index": 6038,
+    "nasdaqIndex": 21567,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-02-03",
+    "sp500Index": 5995,
+    "nasdaqIndex": 21298,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-31",
+    "sp500Index": 6041,
+    "nasdaqIndex": 21478,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-30",
+    "sp500Index": 6071,
+    "nasdaqIndex": 21508,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-29",
+    "sp500Index": 6039,
+    "nasdaqIndex": 21411,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-28",
+    "sp500Index": 6068,
+    "nasdaqIndex": 21463,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-27",
+    "sp500Index": 6012,
+    "nasdaqIndex": 21127,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-24",
+    "sp500Index": 6101,
+    "nasdaqIndex": 21774,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-23",
+    "sp500Index": 6119,
+    "nasdaqIndex": 21901,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-22",
+    "sp500Index": 6086,
+    "nasdaqIndex": 21853,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-21",
+    "sp500Index": 6049,
+    "nasdaqIndex": 21567,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-17",
+    "sp500Index": 5997,
+    "nasdaqIndex": 21441,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-16",
+    "sp500Index": 5937,
+    "nasdaqIndex": 21091,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-15",
+    "sp500Index": 5950,
+    "nasdaqIndex": 21238,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-14",
+    "sp500Index": 5843,
+    "nasdaqIndex": 20757,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-13",
+    "sp500Index": 5836,
+    "nasdaqIndex": 20785,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-10",
+    "sp500Index": 5827,
+    "nasdaqIndex": 20848,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-08",
+    "sp500Index": 5918,
+    "nasdaqIndex": 21181,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-07",
+    "sp500Index": 5909,
+    "nasdaqIndex": 21173,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-06",
+    "sp500Index": 5975,
+    "nasdaqIndex": 21560,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-03",
+    "sp500Index": 5942,
+    "nasdaqIndex": 21326,
+    "fearGreedIndex": 60
+  },
+  {
+    "date": "2025-01-02",
+    "sp500Index": 5869,
+    "nasdaqIndex": 20976,
+    "fearGreedIndex": 60
+  }
+]

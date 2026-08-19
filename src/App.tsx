@@ -12,13 +12,14 @@ import DbToDcTab from './components/DbToDcTab';
 import TraditionalPensionTab from './components/TraditionalPensionTab';
 import ValuationDcaTab from './components/ValuationDcaTab';
 import { ActiveEtfTab } from './components/ActiveEtfTab';
+import FearGreedBacktestTab from './components/FearGreedBacktestTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
-  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf'
-  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf'>('simulator');
+  // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf' | 'fear_greed_backtest'
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf' | 'fear_greed_backtest'>('simulator');
 
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
@@ -103,79 +104,133 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased flex flex-col">
-      {/* Top Header */}
-      <Header
-        activeTab={activeTab}
-        onSelectTab={setActiveTab}
-        onOpenGuide={() => setIsGuideOpen(true)}
-        onOpenTargetCalc={() => setIsTargetCalcOpen(true)}
-        onResetDefaults={handleResetDefaults}
-        onExportCSV={handleExportCSV}
-      />
+    <div className="flex min-h-screen bg-slate-950 text-slate-100">
+      {/* Left Sidebar */}
+      <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+        <Header
+          onOpenGuide={() => setIsGuideOpen(true)}
+          onOpenTargetCalc={() => setIsTargetCalcOpen(true)}
+          onResetDefaults={handleResetDefaults}
+          onExportCSV={handleExportCSV}
+        />
+        <nav className="flex-1 flex flex-col space-y-4 p-4">
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'simulator' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('simulator')}
+          >
+            Simulator
+          </button>
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'tax_guide' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('tax_guide')}
+          >
+            Tax Guide
+          </button>
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'db_to_dc' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('db_to_dc')}
+          >
+            DB to DC
+          </button>
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'traditional_vs_stock' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('traditional_vs_stock')}
+          >
+            Traditional vs Stock
+          </button>
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'valuation_dca' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('valuation_dca')}
+          >
+            Valuation DCA
+          </button>
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'active_etf' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('active_etf')}
+          >
+            Active ETF
+          </button>
+          <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'fear_greed_backtest' ? 'bg-slate-800' : ''}`}
+            onClick={() => setActiveTab('fear_greed_backtest')}
+          >
+            F&G Backtest AI
+          </button>
+        </nav>
+      </aside>
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* 1. Simulator Tab Content */}
-        <div className={activeTab === 'simulator' ? 'block space-y-8' : 'hidden'}>
-          <HeroBanner
-            activePreset={activePreset}
-            projectionData={projectionData}
-            sp500Ratio={params.sp500Ratio}
-            nasdaqRatio={params.nasdaqRatio}
-            onOpenGuide={() => setIsGuideOpen(true)}
-          />
+      {/* Main Content Area and Footer */}
+      <div className="flex-1 flex flex-col h-screen overflow-hidden">
+        <main className="flex-1 p-8 overflow-y-auto">
+          {/* 1. Simulator Tab Content */}
+          <div className={activeTab === 'simulator' ? 'block space-y-8' : 'hidden'}>
+            <HeroBanner
+              activePreset={activePreset}
+              projectionData={projectionData}
+              sp500Ratio={params.sp500Ratio}
+              nasdaqRatio={params.nasdaqRatio}
+              onOpenGuide={() => setIsGuideOpen(true)}
+            />
 
-          <ScenarioCards
-            selectedPresetId={selectedPresetId}
-            onSelectPreset={handleSelectPreset}
-            baseParams={params}
-          />
+            <ScenarioCards
+              selectedPresetId={selectedPresetId}
+              onSelectPreset={handleSelectPreset}
+              baseParams={params}
+            />
 
-          <SimulationChart
-            baseParams={params}
-            selectedPresetId={selectedPresetId}
-          />
+            <SimulationChart
+              baseParams={params}
+              selectedPresetId={selectedPresetId}
+            />
 
-          <CustomCalculator
-            params={params}
-            onChangeParams={setParams}
-            onResetDefaults={handleResetDefaults}
-          />
+            <CustomCalculator
+              params={params}
+              onChangeParams={setParams}
+              onResetDefaults={handleResetDefaults}
+            />
 
-          <YearlyScheduleTable
-            projectionData={{
-              ...projectionData,
-              activePresetName: activePreset.name
-            }}
-            onExportCSV={handleExportCSV}
-          />
-        </div>
+            <YearlyScheduleTable
+              projectionData={{
+                ...projectionData,
+                activePresetName: activePreset.name
+              }}
+              onExportCSV={handleExportCSV}
+            />
+          </div>
 
-        {/* 2. Tax & ETF Strategy Guide Tab Content */}
-        <div className={activeTab === 'tax_guide' ? 'block' : 'hidden'}>
-          <TaxGuideTab />
-        </div>
+          {/* 2. Tax & ETF Strategy Guide Tab Content */}
+          <div className={activeTab === 'tax_guide' ? 'block' : 'hidden'}>
+            <TaxGuideTab />
+          </div>
 
-        {/* 3. DB to DC Conversion Calculator Tab Content */}
-        <div className={activeTab === 'db_to_dc' ? 'block' : 'hidden'}>
-          <DbToDcTab />
-        </div>
+          {/* 3. DB to DC Conversion Calculator Tab Content */}
+          <div className={activeTab === 'db_to_dc' ? 'block' : 'hidden'}>
+            <DbToDcTab />
+          </div>
 
-        {/* 4. Traditional Conservative Pension vs US Stock Snowball Comparison Tab Content */}
-        <div className={activeTab === 'traditional_vs_stock' ? 'block' : 'hidden'}>
-          <TraditionalPensionTab />
-        </div>
+          {/* 4. Traditional Conservative Pension vs US Stock Snowball Comparison Tab Content */}
+          <div className={activeTab === 'traditional_vs_stock' ? 'block' : 'hidden'}>
+            <TraditionalPensionTab />
+          </div>
 
-        {/* 5. 2026 Valuation (PER/EPS) Tracking & Smart DCA Signals Tab Content */}
-        <div className={activeTab === 'valuation_dca' ? 'block' : 'hidden'}>
-          <ValuationDcaTab />
-        </div>
+          {/* 5. 2026 Valuation (PER/EPS) Tracking & Smart DCA Signals Tab Content */}
+          <div className={activeTab === 'valuation_dca' ? 'block' : 'hidden'}>
+            <ValuationDcaTab />
+          </div>
 
-        <div className={activeTab === 'active_etf' ? 'block' : 'hidden'}>
-          <ActiveEtfTab />
-        </div>
-      </main>
+          <div className={activeTab === 'active_etf' ? 'block' : 'hidden'}>
+            <ActiveEtfTab />
+          </div>
+
+          {/* 6. Fear & Greed Backtest AI Tab Content */}
+          <div className={activeTab === 'fear_greed_backtest' ? 'block' : 'hidden'}>
+            <FearGreedBacktestTab />
+          </div>
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
 
       {/* Educational Concept Guide Modal */}
       <EducationalGuide
@@ -188,9 +243,6 @@ export default function App() {
         isOpen={isTargetCalcOpen}
         onClose={() => setIsTargetCalcOpen(false)}
       />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
