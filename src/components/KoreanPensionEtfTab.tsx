@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SmartMarketIndicator from './SmartMarketIndicator';
+import RebalancingRecommender from './RebalancingRecommender';
 
 type Allocation = {
   name: string;
@@ -100,6 +102,7 @@ export default function KoreanPensionEtfTab() {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white p-6">
+      <SmartMarketIndicator />
       <h1 className="text-2xl font-bold mb-6">한국 연금 ETF 포트폴리오</h1>
 
       {/* Level 1: Risk Profile */}
@@ -169,6 +172,10 @@ export default function KoreanPensionEtfTab() {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-8">
+          <RebalancingRecommender riskProfile={riskProfile} accountType={accountType} />
         </div>
       </div>
     </div>
