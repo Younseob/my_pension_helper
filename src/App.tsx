@@ -13,13 +13,14 @@ import TraditionalPensionTab from './components/TraditionalPensionTab';
 import ValuationDcaTab from './components/ValuationDcaTab';
 import { ActiveEtfTab } from './components/ActiveEtfTab';
 import FearGreedBacktestTab from './components/FearGreedBacktestTab';
+import KoreanPensionEtfTab from './components/KoreanPensionEtfTab';
 import Footer from './components/Footer';
 import { PensionParams } from './types/pension';
 import { PRESETS, calculatePensionTimeline } from './utils/pensionMath';
 
 export default function App() {
   // Main Tab State: 'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf' | 'fear_greed_backtest'
-  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf' | 'fear_greed_backtest'>('simulator');
+  const [activeTab, setActiveTab] = useState<'simulator' | 'tax_guide' | 'db_to_dc' | 'traditional_vs_stock' | 'valuation_dca' | 'active_etf' | 'fear_greed_backtest' | 'korean_pension_etf'>('simulator');
 
   // Preset selection state: 'conservative', 'average', 'optimistic'
   const [selectedPresetId, setSelectedPresetId] = useState<'conservative' | 'average' | 'optimistic'>('average');
@@ -104,16 +105,16 @@ export default function App() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-100">
+    <div className="flex flex-col md:flex-row min-h-screen bg-slate-950 text-slate-100">
       {/* Left Sidebar */}
-      <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+      <aside className="w-full md:w-64 bg-slate-900 border-b md:border-r border-slate-800 flex flex-col flex-shrink-0">
         <Header
           onOpenGuide={() => setIsGuideOpen(true)}
           onOpenTargetCalc={() => setIsTargetCalcOpen(true)}
           onResetDefaults={handleResetDefaults}
           onExportCSV={handleExportCSV}
         />
-        <nav className="flex-1 flex flex-col space-y-4 p-4">
+        <nav className="flex flex-row md:flex-col overflow-x-auto whitespace-nowrap p-4 space-x-2 md:space-x-0 md:space-y-4 no-scrollbar">
           <button
             className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'simulator' ? 'bg-slate-800' : ''}`}
             onClick={() => setActiveTab('simulator')}
@@ -155,6 +156,12 @@ export default function App() {
             onClick={() => setActiveTab('fear_greed_backtest')}
           >
             F&G Backtest AI
+          </button>
+                  <button
+            className={`px-4 py-2 text-slate-100 hover:bg-slate-800 ${activeTab === 'korean_pension_etf' ? 'bg-slate-800 border-l-4 border-emerald-500' : ''}`}
+            onClick={() => setActiveTab('korean_pension_etf')}
+          >
+            한국 연금 ETF 포트폴리오
           </button>
         </nav>
       </aside>
@@ -225,6 +232,9 @@ export default function App() {
           {/* 6. Fear & Greed Backtest AI Tab Content */}
           <div className={activeTab === 'fear_greed_backtest' ? 'block' : 'hidden'}>
             <FearGreedBacktestTab />
+          </div>
+          <div className={activeTab === 'korean_pension_etf' ? 'block' : 'hidden'}>
+            <KoreanPensionEtfTab />
           </div>
         </main>
 
