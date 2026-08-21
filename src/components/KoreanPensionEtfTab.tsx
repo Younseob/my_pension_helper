@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import SmartMarketIndicator from './SmartMarketIndicator';
 import RebalancingRecommender from './RebalancingRecommender';
 
@@ -175,7 +175,7 @@ export default function KoreanPensionEtfTab() {
         </div>
         
         <div className="mt-8">
-          <RebalancingRecommender riskProfile={riskProfile} accountType={accountType} />
+          <RebalancingRecommender riskProfile={riskProfile} accountType={accountType} currentAllocations={data.allocations} />
         </div>
       </div>
     </div>
